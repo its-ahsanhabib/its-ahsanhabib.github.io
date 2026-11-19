@@ -95,7 +95,9 @@ function renderBlock(b) {
 			return '<p><img src="' + escapeHtml(b.src) + '" alt="' + escapeHtml(b.alt || 'project') + '"></p>' +
 				(b.caption ? '<h5>' + escapeHtml(b.caption) + '</h5>' : '');
 		case 'video':
-			return '<p><video controls preload="metadata" playsinline src="' + escapeHtml(b.src) + '"></video></p>';
+			return '<p><video controls preload="metadata" playsinline src="' + escapeHtml(b.src) + '"' +
+				(b.poster ? ' poster="' + escapeHtml(b.poster) + '"' : '') + '></video></p>' +
+				(b.caption ? '<h5>' + escapeHtml(b.caption) + '</h5>' : '');
 		case 'youtube':
 			return '<p><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/' + escapeHtml(b.id) +
 				'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe></p>';

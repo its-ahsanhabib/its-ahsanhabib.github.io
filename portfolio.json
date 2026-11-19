@@ -1,5 +1,881 @@
 [
   {
+    "id": "homelab-m710q-m2-slot",
+    "title": "Adding a 2nd M.2 Slot to a Lenovo M710q Tiny",
+    "summary": "Hand-soldered the unpopulated second M.2 NVMe/SATA slot on my homelab server's motherboard.",
+    "year": 2026,
+    "featured": true,
+    "categories": [
+      "Electronics"
+    ],
+    "cover": "portfolio/images/homelab-m710q-m2-slot/cover.jpg",
+    "meta": {
+      "Type": "Personal / Homelab",
+      "Stack": "Proxmox, TrueNAS, Home Assistant"
+    },
+    "links": [
+      {
+        "label": "View on LinkedIn",
+        "url": "https://www.linkedin.com/posts/embedwithahsan_homelab-hardwarehacking-diytech-ugcPost-7482894801319919617-q0AI/"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/homelab-m710q-m2-slot/cover.jpg",
+        "caption": "The new SSD2 slot, recognized and running"
+      },
+      {
+        "type": "heading",
+        "text": "About the project"
+      },
+      {
+        "type": "text",
+        "html": "<p>My Lenovo ThinkCentre M710q has been the backbone of my homelab, and it was running out of storage.</p><p>Instead of just buying a larger drive, I took the DIY route: populate the unpopulated second M.2 slot on the motherboard. After digging through community guides, I ordered the M.2 connector and supporting components from LCSC, fired up the soldering iron and got to work.</p><p>After careful hand-soldering and fixing a few minor solder bridges, the board recognized a spare 120GB M.2 SATA SSD.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/homelab-m710q-m2-slot/new-connector.jpg",
+        "caption": "M.2 connector fitted to the empty pads"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/homelab-m710q-m2-slot/soldering.jpg",
+        "caption": "Soldering under the microscope"
+      },
+      {
+        "type": "heading",
+        "text": "Homelab specs"
+      },
+      {
+        "type": "text",
+        "html": "<p><strong>CPU:</strong> upgraded from the stock i5-7500 to a salvaged Core i7-7700, with a 90W adapter for the extra TDP<br><strong>RAM:</strong> 16GB (2 × 8GB) DDR4<br><strong>Storage:</strong> 256GB NVMe + 250GB 2.5\" SATA SSD in a mirrored RAID for OS and critical data, plus the new 120GB M.2 SATA SSD<br><strong>Services:</strong> Proxmox running Ubuntu Server, Home Assistant and TrueNAS</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/homelab-m710q-m2-slot/ssd-installed.jpg"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/homelab-m710q-m2-slot/board-overview.jpg",
+        "caption": "Fully populated board"
+      },
+      {
+        "type": "text",
+        "html": "<p>There is something very satisfying about making unpopulated motherboard pads actually work. Thanks to the homelab and hardware communities for the documentation and inspiration.</p>"
+      }
+    ]
+  },
+  {
+    "id": "mppt-solar-charge-controller",
+    "title": "1kW MPPT Solar Charge Controller",
+    "summary": "80V PV input, 20A output MPPT charger with multi-chemistry battery support. V1 prototype.",
+    "year": 2026,
+    "featured": true,
+    "categories": [
+      "Electronics",
+      "Power",
+      "Embedded_System"
+    ],
+    "cover": "portfolio/images/mppt-solar-charge-controller/cover.jpg",
+    "meta": {
+      "Specs": "80V max PV · 20A out · 1kW",
+      "Stage": "V1 prototype"
+    },
+    "links": [
+      {
+        "label": "LinkedIn: design",
+        "url": "https://www.linkedin.com/posts/embedwithahsan_1kw-mppt-solar-charge-controller-desinged-share-7460772899491155968-BGni/"
+      },
+      {
+        "label": "LinkedIn: PCB arrived",
+        "url": "https://www.linkedin.com/posts/embedwithahsan_electronicsengineering-embeddedsystems-solarenergy-ugcPost-7467957744713740288-VbLY/"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/mppt-solar-charge-controller/3d-render.jpg",
+        "caption": "3D render of the V1 board"
+      },
+      {
+        "type": "heading",
+        "text": "About the project"
+      },
+      {
+        "type": "text",
+        "html": "<p>A 1kW MPPT solar charge controller: 80V max PV input, 20A output and support for multiple battery chemistries.</p><p>It is designed for efficient energy harvesting and reliable power management, with stable performance across battery types while maximizing solar conversion efficiency. The target is small off-grid systems, DIY energy setups and embedded power projects where stability and flexibility matter.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/mppt-solar-charge-controller/bare-pcb.jpg",
+        "caption": "V1 PCBs back from the fab"
+      },
+      {
+        "type": "heading",
+        "text": "Status"
+      },
+      {
+        "type": "text",
+        "html": "<p>Version 1 is focused on validating the design and making sure it performs as expected. The boards have arrived. Next comes hand-soldering, testing and debugging, then a refined version designed for production.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/mppt-solar-charge-controller/cover.jpg"
+      }
+    ]
+  },
+  {
+    "id": "aquarium-controller",
+    "title": "Home Assistant Aquarium Controller",
+    "summary": "Custom PCB that monitors the aquarium and automates the filter pump and plant lighting via Home Assistant.",
+    "year": 2026,
+    "featured": true,
+    "categories": [
+      "Electronics",
+      "iOT",
+      "Automation",
+      "Embedded_System"
+    ],
+    "cover": "portfolio/images/aquarium-controller/cover.jpg",
+    "meta": {
+      "Type": "Personal",
+      "Tech": "Custom PCB, 0603 SMT, Home Assistant"
+    },
+    "links": [
+      {
+        "label": "LinkedIn: the build",
+        "url": "https://www.linkedin.com/posts/embedwithahsan_embedded-ugcPost-7458799724188385280-kmex/"
+      },
+      {
+        "label": "LinkedIn: on rework",
+        "url": "https://www.linkedin.com/posts/embedwithahsan_hardware-embedded-pcba-ugcPost-7459263315333128192-BuAZ/"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/aquarium-controller/cover.jpg",
+        "caption": "Hand-soldered 0603 components on the custom PCB"
+      },
+      {
+        "type": "heading",
+        "text": "About the project"
+      },
+      {
+        "type": "text",
+        "html": "<p>A custom controller for our home aquarium. It integrates with Home Assistant to monitor the tank, automate the filter pump and run the lighting schedule for the plants.</p><p>My wife and I designed the PCB together, and she hand-soldered most of the SMT parts (mostly 0603). She has been a huge part of keeping me going on this embedded journey.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/aquarium-controller/hand-soldering.jpg",
+        "caption": "Assembly under the microscope in the home lab"
+      },
+      {
+        "type": "heading",
+        "text": "Making mistakes, and fixing them"
+      },
+      {
+        "type": "text",
+        "html": "<p>With every new design I make mistakes. Usually I can fix them; occasionally one is unfixable. Even with checking and double-checking, it happens, though less often now.</p><p>Many new hardware designers get frustrated when they find a mistake after the PCBA has already arrived. Don't. Take a deep breath, gather your rework tools and fix as much as you can, then learn from it for the next revision.</p>"
+      },
+      {
+        "type": "video",
+        "src": "portfolio/images/aquarium-controller/rework.mp4",
+        "poster": "portfolio/images/aquarium-controller/rework-poster.jpg",
+        "caption": "Reworking a board"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/aquarium-controller/home-lab.jpg",
+        "caption": "The home lab"
+      }
+    ]
+  },
+  {
+    "id": "ble-passive-keyless-entry",
+    "title": "BLE Passive Keyless Entry for Mobility Vehicles",
+    "summary": "STM32 + BLE walk-away lock / approach unlock with phone-controlled ignition.",
+    "year": 2026,
+    "featured": true,
+    "categories": [
+      "Electronics",
+      "iOT",
+      "Embedded_System",
+      "Automation"
+    ],
+    "cover": "portfolio/images/ble-passive-keyless-entry/cover.jpg",
+    "meta": {
+      "MCU": "STM32",
+      "Radio": "W02 BLE module",
+      "App": "NOJOR, with MD Ahsan Hasib"
+    },
+    "links": [
+      {
+        "label": "View on LinkedIn",
+        "url": "https://www.linkedin.com/posts/embedwithahsan_pke-embeddedsystems-stm32-ugcPost-7442548648107831296-RxOT/"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/ble-passive-keyless-entry/cover.jpg",
+        "caption": "Inside the unit: BLE module and relay board"
+      },
+      {
+        "type": "heading",
+        "text": "About the project"
+      },
+      {
+        "type": "text",
+        "html": "<p>Firmware for a BLE-based Passive Keyless Entry (PKE) device for mobility vehicles, completed over an Eid break. The goal: a seamless, secure and responsive walk-away lock / approach unlock experience, controlled entirely from a smartphone.</p>"
+      },
+      {
+        "type": "heading",
+        "text": "Technical details"
+      },
+      {
+        "type": "text",
+        "html": "<p><strong>MCU:</strong> STM32 family, for processing power and low-power efficiency<br><strong>Communication:</strong> W02 BLE module for proximity sensing and data transmission<br><strong>Firmware:</strong> custom state machine handling security handshakes and relay logic, keeping the vehicle secure even in noisy RF environments</p>"
+      },
+      {
+        "type": "heading",
+        "text": "Features"
+      },
+      {
+        "type": "text",
+        "html": "<p>Proximity-based auto unlock / lock<br>Remote ignition control from a custom mobile app (NOJOR)<br>Real-time battery voltage monitoring</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/ble-passive-keyless-entry/app-1.jpg",
+        "caption": "NOJOR app"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/ble-passive-keyless-entry/app-2.jpg"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/ble-passive-keyless-entry/bench.jpg",
+        "caption": "Prototype on the bench"
+      },
+      {
+        "type": "text",
+        "html": "<p>There is something very satisfying about code on a screen turning into a physical relay click that powers a vehicle. Next step: refining the proximity algorithms. App development was a collaboration with MD Ahsan Hasib.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/ble-passive-keyless-entry/dev-setup.jpg"
+      }
+    ]
+  },
+  {
+    "id": "ardupilot-custom-flight-controller",
+    "title": "Porting ArduPilot to a Custom Flight Controller",
+    "summary": "Weekend project bringing up ArduPilot (ChibiOS) on custom flight-controller hardware.",
+    "year": 2026,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "Embedded_System",
+      "Robotics_Mechatronics"
+    ],
+    "cover": "portfolio/images/ardupilot-custom-flight-controller/cover.jpg",
+    "meta": {
+      "Type": "Personal / learning",
+      "Stack": "ArduPilot, ChibiOS"
+    },
+    "links": [
+      {
+        "label": "View on LinkedIn",
+        "url": "https://www.linkedin.com/posts/embedwithahsan_customflightcontroller-soldering-ardupilot-ugcPost-7415366188882386944-tqyI/"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/ardupilot-custom-flight-controller/cover.jpg",
+        "caption": "The custom flight controller board"
+      },
+      {
+        "type": "heading",
+        "text": "About the project"
+      },
+      {
+        "type": "text",
+        "html": "<p>A weekend learning project: porting ArduPilot to a custom flight controller. Along the way it became clear that ChibiOS, the RTOS inside ArduPilot, is an excellent learning resource for anyone getting into embedded firmware engineering. It is real, production-grade code.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/ardupilot-custom-flight-controller/sensor.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "Why it's great for new embedded engineers"
+      },
+      {
+        "type": "text",
+        "html": "<p>Clean, well-structured peripheral drivers (UART, SPI, I²C, ADC, DMA)<br>A proper hardware abstraction layer for multi-MCU support<br>Real-time task scheduling done right<br>Sensor handling with strict timing constraints<br>Proven, stable code running on real flying systems</p><p>Unlike simple demo projects, this stack shows how professional embedded firmware is actually written, from board bring-up to real-time execution. If you want to move beyond blinking LEDs, exploring ArduPilot's ChibiOS implementation is one of the best hands-on paths available.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/ardupilot-custom-flight-controller/ground-station.jpg",
+        "caption": "Talking to the ground station"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/ardupilot-custom-flight-controller/code.jpg"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/ardupilot-custom-flight-controller/i2c.jpg"
+      }
+    ]
+  },
+  {
+    "id": "universal-vts-telematics",
+    "title": "Universal VTS Telematics Device",
+    "summary": "Designed and manufactured in Bangladesh: one GPS/OBD2 tracker speaking GT06, Teltonika and H02 protocols.",
+    "year": 2025,
+    "featured": true,
+    "categories": [
+      "Electronics",
+      "iOT",
+      "Embedded_System"
+    ],
+    "cover": "portfolio/images/universal-vts-telematics/cover.jpg",
+    "meta": {
+      "Type": "Product, in production",
+      "Protocols": "GT06, GT06F, Teltonika, H02"
+    },
+    "links": [
+      {
+        "label": "LinkedIn: launch",
+        "url": "https://www.linkedin.com/posts/embedwithahsan_it-started-with-the-made-in-bangladesh-ugcPost-7325826116525404162-_Lu3/"
+      },
+      {
+        "label": "LinkedIn: in-house production",
+        "url": "https://www.linkedin.com/posts/embedwithahsan_vts-share-7331383831037452289-cm-l/"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/universal-vts-telematics/cover.jpg",
+        "caption": "GNSS, cellular and backup battery inside the IP67 enclosure"
+      },
+      {
+        "type": "heading",
+        "text": "How it started"
+      },
+      {
+        "type": "text",
+        "html": "<p>Two friends and I started brainstorming how we could contribute to Bangladesh with our embedded engineering expertise. One idea stood out: the Vehicle Tracking System (VTS) market. Over 60 importers in Bangladesh source VTS devices from nearly 40 suppliers worldwide, yet there was still a gap for a reliable product at a competitive price.</p>"
+      },
+      {
+        "type": "heading",
+        "text": "What customers need"
+      },
+      {
+        "type": "text",
+        "html": "<p>Instant alerts when someone touches the car<br>Accurate mileage tracking for every trip<br>Fuel consumption data and route analytics for fleets<br>Real-time location and door status for private owners<br>Geofencing to manage misuse<br>Freezer-van temperature monitoring for food and pharma suppliers</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/universal-vts-telematics/render.jpg",
+        "caption": "Enclosure and PCB design"
+      },
+      {
+        "type": "heading",
+        "text": "The device"
+      },
+      {
+        "type": "text",
+        "html": "<p>So we built one standardized, adaptable device for most of these use cases: a universal telematics device that supports multiple protocols (GT06, GT06F, Teltonika, H02) in one unit, so it connects to existing service providers' platforms.</p><p>GNSS + AGPS for fast, accurate positioning<br>Real-time GPS + OBD2 diagnostics<br>Smart alerts<br>Sensor-ready: fuel, temperature, door and more<br>Rugged IP67 enclosure, long battery backup, high-gain GPS antenna<br>Smart power management to protect the vehicle battery while staying connected 24/7</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/universal-vts-telematics/enclosure.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "In production"
+      },
+      {
+        "type": "text",
+        "html": "<p>After rounds of prototyping, we are now manufacturing our own VTS devices in-house for customers. Designed, developed and built in Bangladesh, for the world.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/universal-vts-telematics/pcba-1.jpg",
+        "caption": "Production PCBAs"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/universal-vts-telematics/pcba-2.jpg"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/universal-vts-telematics/production.jpg",
+        "caption": "Units in testing"
+      }
+    ]
+  },
+  {
+    "id": "versatile-iot-gateway",
+    "title": "Versatile IoT Gateway",
+    "summary": "ESP32-C6 gateway with Wi-Fi/BLE/Zigbee/Thread, LoRa for long range and SIM868 cellular backhaul.",
+    "year": 2025,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "iOT",
+      "Embedded_System"
+    ],
+    "cover": "portfolio/images/versatile-iot-gateway/cover.jpg",
+    "meta": {
+      "Type": "Personal",
+      "Core": "ESP32-C6, SIM868, LoRa"
+    },
+    "links": [
+      {
+        "label": "View on LinkedIn",
+        "url": "https://www.linkedin.com/posts/embedwithahsan_embeddedabrlife-hobist-espidf-ugcPost-7294446556605206530-CRlg/"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/versatile-iot-gateway/cover.jpg",
+        "caption": "Prototype on the soldering table"
+      },
+      {
+        "type": "heading",
+        "text": "About the project"
+      },
+      {
+        "type": "text",
+        "html": "<p>I've always wanted to design an IoT gateway that fits most scenarios. A truly versatile gateway needs redundant server communication for mission-critical data, and multiple ways to connect to node devices.</p>"
+      },
+      {
+        "type": "heading",
+        "text": "The plan"
+      },
+      {
+        "type": "text",
+        "html": "<p><strong>ESP32-C6</strong> as the core MCU: Wi-Fi, BLE, Zigbee and Thread for short-range nodes<br><strong>SIM868</strong> for remote MQTT over cellular<br><strong>LoRa</strong> for long-range, low-power distant nodes</p><p>Currently in the power-connection phase, testing everything in Arduino before moving to ESP-IDF.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/versatile-iot-gateway/board.jpg"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/versatile-iot-gateway/bench.jpg",
+        "caption": "The new dedicated soldering table"
+      }
+    ]
+  },
+  {
+    "id": "smart-plug-load-controller",
+    "title": "Smart Plug Load Controller",
+    "summary": "ESP-IDF smart plug / load controller with dual breakers, mobile app and nodes. In pre-production testing.",
+    "year": 2025,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "iOT",
+      "Automation",
+      "Embedded_System",
+      "Power"
+    ],
+    "cover": "portfolio/images/smart-plug-load-controller/cover.jpg",
+    "meta": {
+      "Stack": "ESP-IDF, Altium",
+      "Stage": "Pre-production testing"
+    },
+    "links": [
+      {
+        "label": "LinkedIn: the device",
+        "url": "https://www.linkedin.com/posts/embedwithahsan_homelab-hardwareengineer-embeddedsystem-ugcPost-7290297428681834496-9Gk5/"
+      },
+      {
+        "label": "LinkedIn: testing",
+        "url": "https://www.linkedin.com/posts/embedwithahsan_espabridf-espressifeabride-firmware-ugcPost-7287873311986880512-mV-0/"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/smart-plug-load-controller/cover.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "About the project"
+      },
+      {
+        "type": "text",
+        "html": "<p>You see a smart plug; I see a versatile load controller with endless possibilities for external interactions. And why two breakers in a load controller? I know my purpose.</p><p>Firmware in ESP-IDF, PCB in Altium.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/smart-plug-load-controller/inside-1.jpg",
+        "caption": "Inside the plug"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/smart-plug-load-controller/inside-2.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "Pre-production testing"
+      },
+      {
+        "type": "text",
+        "html": "<p>Pre-production testing is ongoing. IoT modules, the mobile app and nodes are coming soon.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/smart-plug-load-controller/app.jpg",
+        "caption": "Mobile app control"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/smart-plug-load-controller/test-1.jpg"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/smart-plug-load-controller/test-2.jpg"
+      }
+    ]
+  },
+  {
+    "id": "usb-isolation-tool",
+    "title": "USB Isolation Tool",
+    "summary": "Protects PCs from ground loops and surges when developing on non-isolated IoT hardware.",
+    "year": 2024,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "iOT",
+      "Power"
+    ],
+    "cover": "portfolio/images/usb-isolation-tool/cover.jpg",
+    "meta": {
+      "Type": "Tool",
+      "Stage": "PCB design"
+    },
+    "links": [
+      {
+        "label": "View on LinkedIn",
+        "url": "https://www.linkedin.com/posts/embedwithahsan_iot-usbisoation-powersafety-ugcPost-7278655214511910912-Vh7H/"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/usb-isolation-tool/cover.jpg",
+        "caption": "Schematic and PCB layout"
+      },
+      {
+        "type": "heading",
+        "text": "Why"
+      },
+      {
+        "type": "text",
+        "html": "<p>Non-isolated power supplies often power IoT nodes, and they bring their own challenges. One of my juniors accidentally damaged his desktop through a ground loop caused by a non-isolated supply while working on an IoT project.</p>"
+      },
+      {
+        "type": "heading",
+        "text": "What it does"
+      },
+      {
+        "type": "text",
+        "html": "<p>Protects devices from power surges and ground loops<br>Keeps data transfer clean and interference-free<br>Improves the safety and reliability of IoT development setups</p><p>(PCB placement and size were not the focus of this revision.)</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/usb-isolation-tool/3d.jpg",
+        "caption": "3D view"
+      }
+    ]
+  },
+  {
+    "id": "stm32-cdc-usb-serial",
+    "title": "STM32 USB CDC Serial Example",
+    "summary": "Open-source example of USB serial communication between an STM32 and Linux, with C++ service layer.",
+    "year": 2024,
+    "featured": false,
+    "categories": [
+      "Embedded_System"
+    ],
+    "cover": "portfolio/images/stm32-cdc-usb-serial/cover.jpg",
+    "meta": {
+      "Type": "Open source",
+      "Tested on": "STM32F103",
+      "Language": "C / C++"
+    },
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/its-ahsanhabib/STM32-CDC-USB-Serial"
+      },
+      {
+        "label": "View on LinkedIn",
+        "url": "https://www.linkedin.com/posts/embedwithahsan_github-its-ahsanhabibstm32-cdc-usb-serial-share-7245701224933588993-6_Ne/"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "About the project"
+      },
+      {
+        "type": "text",
+        "html": "<p>We often need serial communication with embedded devices to exchange data or receive commands from a Linux machine. This example project shows how to use USB (CDC class) for serial communication with an STM32 MCU, and includes example C++ application-layer services to help streamline development.</p><p>Feel free to use it in your next project.</p>"
+      }
+    ]
+  },
+  {
+    "id": "vts-enclosure-solidworks",
+    "title": "VTS Enclosure Redesign in SolidWorks",
+    "summary": "Refined the enclosure of the RideOn VTS product while learning SolidWorks.",
+    "year": 2024,
+    "featured": false,
+    "categories": [
+      "3D",
+      "Electronics"
+    ],
+    "cover": "portfolio/images/vts-enclosure-solidworks/cover.jpg",
+    "meta": {
+      "Tool": "SolidWorks",
+      "Product": "RideOn VTS"
+    },
+    "links": [
+      {
+        "label": "View on LinkedIn",
+        "url": "https://www.linkedin.com/posts/embedwithahsan_vts-rideon-embeddedabrsystems-share-7190076435393384449-yZu5/"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/vts-enclosure-solidworks/cover.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "About the project"
+      },
+      {
+        "type": "text",
+        "html": "<p>I recently got into SolidWorks, and it has been instrumental in shaping the products I'm working on, especially enclosure design.</p><p>One notable project was refining the enclosure of our RideOn VTS product: improving both the functionality and the look of an existing product. For an embedded system designer, SolidWorks skills open many doors, from enclosures for IoT devices to fitting PCB layouts into them.</p>"
+      }
+    ]
+  },
+  {
+    "id": "biton-evse",
+    "title": "BiTOn: Smart EV Charger (EVSE)",
+    "summary": "6–32A adjustable EV charger with solar load balancing, GFCI, app control and Wi-Fi/BLE/GSM.",
+    "year": 2023,
+    "featured": true,
+    "categories": [
+      "Electronics",
+      "Power",
+      "iOT",
+      "Embedded_System"
+    ],
+    "cover": "portfolio/images/biton-evse/cover.jpg",
+    "meta": {
+      "Type": "Personal, MVP",
+      "Core": "ESP32 + SIM800"
+    },
+    "links": [
+      {
+        "label": "View on LinkedIn",
+        "url": "https://www.linkedin.com/posts/embedwithahsan_biton-biton-biton-ugcPost-7109950612254986240-0U7_/"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/biton-evse/cover.jpg",
+        "caption": "BiTOn MVP"
+      },
+      {
+        "type": "heading",
+        "text": "About the project"
+      },
+      {
+        "type": "text",
+        "html": "<p>BiTOn is my EVSE (electric vehicle supply equipment) project. Sustainable transportation is the future, and this is my part in it.</p>"
+      },
+      {
+        "type": "heading",
+        "text": "Features"
+      },
+      {
+        "type": "text",
+        "html": "<p><strong>Adjustable charging current</strong> from 6A to 32A: lower it to run only on excess solar, or raise it to charge faster from the grid<br><strong>Power monitoring and dynamic load balancing</strong> for solar or battery storage<br><strong>Phase upgradeable:</strong> single-phase now, with a path to 3-phase Level 2<br><strong>Safety:</strong> GFCI ground-fault detection at 30mA AC leakage<br><strong>Protection:</strong> over-current, over-voltage and under-voltage<br><strong>Connectivity:</strong> Wi-Fi, BLE 4.2 and 2G/3G GSM for server communication and SMS alerts<br><strong>Smartphone app</strong> for remote monitoring and control<br><strong>Temperature monitoring</strong> of the magnetic contactor<br><strong>OTA updates</strong></p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/biton-evse/app.jpg",
+        "caption": "Monitoring app"
+      },
+      {
+        "type": "heading",
+        "text": "Components"
+      },
+      {
+        "type": "text",
+        "html": "<p><strong>Display:</strong> PCD8544 (the Nokia 5110 LCD), for a touch of nostalgia<br><strong>Metering:</strong> PZEM-004T for voltage, current and power. Not EVSE-class, but fine for the MVP; version one moves to a DIN-rail RS485 energy meter, and later an on-board meter<br><strong>Switching:</strong> an SSR drives the magnetic contactor that switches the 32A load<br><strong>Brain:</strong> ESP32 LilyGO T-Call SIM800 for the MVP; planned move to an ESP32-WROVER with a PCIe GSM modem</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/biton-evse/app-live.jpg"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/biton-evse/proto.jpg"
+      },
+      {
+        "type": "text",
+        "html": "<p>Thanks to Abul Hasnat for guiding me on this journey from an early age.</p>"
+      }
+    ]
+  },
+  {
+    "id": "lc-filter-energy-harvesting-poc",
+    "title": "LC Filter POC for Energy Harvesting",
+    "summary": "Throwback: the complete LC filter proof of concept for a small-scale energy harvesting device.",
+    "year": 2017,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "Power"
+    ],
+    "cover": "portfolio/images/lc-filter-energy-harvesting-poc/cover.jpg",
+    "links": [
+      {
+        "label": "View on LinkedIn",
+        "url": "https://www.linkedin.com/posts/embedwithahsan_electronics-engineering-throwback-ugcPost-7292507896305664000-czv3/"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/lc-filter-energy-harvesting-poc/cover.jpg",
+        "caption": "18 March 2017, 5:23 AM"
+      },
+      {
+        "type": "heading",
+        "text": "About the project"
+      },
+      {
+        "type": "text",
+        "html": "<p>The complete LC filter proof of concept for a small-scale energy harvesting device, from the beginning of my embedded systems journey. The POC was a success.</p><p>Every big journey starts with small circuits, late nights and a passion for building.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/lc-filter-energy-harvesting-poc/breadboard.jpg"
+      }
+    ]
+  },
+  {
+    "id": "home-lab",
+    "title": "My Home Lab",
+    "summary": "The beautifully chaotic space where my ideas, and some products, come to life.",
+    "year": 2025,
+    "featured": false,
+    "categories": [
+      "Thinking_Traveling"
+    ],
+    "cover": "portfolio/images/home-lab/cover.jpg",
+    "links": [
+      {
+        "label": "View on LinkedIn",
+        "url": "https://www.linkedin.com/posts/embedwithahsan_freshabrstart-innovation-passion-ugcPost-7360032901582770176-qXQX/"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/home-lab/cover.jpg"
+      },
+      {
+        "type": "text",
+        "html": "<p>For years, my home lab, this beautifully chaotic sanctuary, has been where my heart and mind come alive. Thousands of ideas have sparked here: some grew into products used around the world, others rest quietly in plastic containers, still vivid in my imagination. This space isn't about chasing success; it's about keeping my mind curious and sharp.</p><p>After nearly four months away, stepping back into it felt like a homecoming. Every idea, whether it soars or stays a quiet dream, is a piece of the journey.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/home-lab/me.jpg"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/home-lab/desk.jpg"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/home-lab/proto.jpg"
+      }
+    ]
+  },
+  {
+    "id": "saleae-logic-analyzer",
+    "title": "My Most Indispensable Tool: Saleae Logic Analyzer",
+    "summary": "Of all the tools I've invested in, the logic analyzer is the one I can't work without.",
+    "year": 2025,
+    "featured": false,
+    "categories": [
+      "Thinking_Traveling"
+    ],
+    "cover": "portfolio/images/saleae-logic-analyzer/cover.jpg",
+    "links": [
+      {
+        "label": "View on LinkedIn",
+        "url": "https://www.linkedin.com/posts/embedwithahsan_saleae-firmwareengineering-debugging-share-7318321616331882498-MGie/"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/saleae-logic-analyzer/cover.jpg"
+      },
+      {
+        "type": "text",
+        "html": "<p>As an embedded firmware engineer I've invested in countless tools, but none has proven as indispensable as my Saleae logic analyzer. It's a game-changer for firmware engineering and debugging. Highly recommended.</p>"
+      }
+    ]
+  },
+  {
+    "id": "led-debugging",
+    "title": "Debugging with a Single LED",
+    "summary": "Start with the simplest tool, then let measurement and analysis take over.",
+    "year": 2024,
+    "featured": false,
+    "categories": [
+      "Thinking_Traveling"
+    ],
+    "cover": "portfolio/images/led-debugging/cover.jpg",
+    "links": [
+      {
+        "label": "View on LinkedIn",
+        "url": "https://www.linkedin.com/posts/embedwithahsan_embeddedsystems-led-pwm-share-7270971691273461760-ByMT/"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/led-debugging/cover.jpg"
+      },
+      {
+        "type": "text",
+        "html": "<p>As an embedded firmware engineer, I often start with the simplest tool: an LED, to debug and diagnose. Once the basics are clear, measurement and analysis (PWM, logic analyzer) take over to refine the solution.</p><p>It's amazing how much insight a tiny light can give.</p>"
+      }
+    ]
+  },
+  {
     "id": "portfolio-item-01",
     "title": "Low Cost Refreshable Braille Display",
     "summary": "This is a Refreshable braille display...",
