@@ -2,137 +2,735 @@
   {
     "id": "portfolio-item-01",
     "title": "Low Cost Refreshable Braille Display",
-    "categoryText": "This is a Refreshable braille display...",
-    "categories": ["Electronics", "Embeded_System", "Robotics_Mechatronics"],
-    "image": "portfolio/images/braile_cover.jpg",
-    "link": "portfolio-item-01.html"
+    "summary": "This is a Refreshable braille display...",
+    "year": null,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "Embedded_System",
+      "Robotics_Mechatronics"
+    ],
+    "cover": "portfolio/images/braile_cover.jpg",
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_1/braile_cover.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "ABOUT THE PROJECT"
+      },
+      {
+        "type": "text",
+        "html": "<p>Braille is a tactile writing system used by people who are visually impaired. It is traditionally written with embossed paper. Nowadays Braille users can read computer screens and other electronic supports with refreshable braille displays. Over the world there are some models of braille displays available, but they cost huge and don't support our native Bangla language. To overcome this, one of my honorable teachers, Arif Reza Anwary (Asst. Professor, UIU), as well as inspired by PROF. DR. MD. FAYYAZ KHAN (Pro Vice Chancellor, Green University of Bangladesh), motivated me to make a braille display which will be low cost and navigated through voice output narration. It also supports audio books. Refreshable Braille Display is a device used by visually impaired people. Designed with Raspberry Pi 2 support, voice synthesizer, multimedia books, and easy braille games for children.</p><p><em>Note: This device can convert English or Bengali text files into Braille symbols.</em></p>"
+      },
+      {
+        "type": "heading",
+        "text": "MADE FOR"
+      },
+      {
+        "type": "text",
+        "html": "<p>Bringing accessible technology and education to visually impaired individuals.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_1/1.jpeg"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_1/2.JPG"
+      }
+    ]
   },
   {
     "id": "portfolio-item-02",
     "title": "Pick and Place Machine",
-    "categoryText": "This is an IoT device for paper delivery...",
-    "categories": ["Electronics", "Embeded_System", "Robotics_Mechatronics", "3D"],
-    "image": "portfolio/images/pick place.jpg",
-    "link": "portfolio-item-02.html"
+    "summary": "This is an IoT device for paper delivery...",
+    "year": null,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "Embedded_System",
+      "Robotics_Mechatronics",
+      "3D"
+    ],
+    "cover": "portfolio/images/pick place.jpg",
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/pick place.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "ABOUT THE PROJECT"
+      },
+      {
+        "type": "text",
+        "html": "<p>A pick and place machine is used in indrustry to replace human to do that precission work with out touch of the human hand. they are much precise as .01mm</p><p>But the goal of this machine is to maintain a stack of paper and deliver that to the client as defined as in server.</p>"
+      },
+      {
+        "type": "heading",
+        "text": "MADE FOR"
+      },
+      {
+        "type": "text",
+        "html": "<p>Labratory, secure paper management and various fields.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_2/1.jpeg"
+      },
+      {
+        "type": "youtube",
+        "id": "Kyrw5u-79t8"
+      },
+      {
+        "type": "youtube",
+        "id": "m7zT-T6u2JU"
+      }
+    ]
   },
   {
     "id": "portfolio-item-03",
     "title": "Wireless (Ultrasonic) Power Transfer",
-    "categoryText": "Long Range power Transfer for IoT devices",
-    "categories": ["Electronics", "iOT", "Power"],
-    "image": "portfolio/images/ultrasonic power.jpg",
-    "link": "portfolio-item-03.html"
+    "summary": "Long Range power Transfer for IoT devices",
+    "year": 2017,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "iOT",
+      "Power"
+    ],
+    "cover": "portfolio/images/ultrasonic power.jpg",
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_3/1.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "ABOUT THE PROJECT"
+      },
+      {
+        "type": "text",
+        "html": "<p>Wireless power transfer for IoT devices is must for our coming technological world, it’s a hassle to wire up the power cable for the devices those we are going to use the most of our daily life, now as we know our mobile phone is the most power full IoT device that we use most.</p><p>At Samsung Research & Development, Bangladesh, some visionary people Anwarul Haque, Mahabubul Anam and some other think to solve that issue, they got a brilliant idea to solve the problem, they use ultrasonic technology to solve this problem, they got an A1 US Patent on this topic.</p><p>I and one of my Fellow Engineer Shimanto Chowdhury were appointed to make a POC (Proof Of Concept) on that topic. Our goal was to get 1-watt Power by the distance of 5 feet between Transmitter and Receiver.</p><p>After 3 month of hard work we got 640 m Watt power at the distance of 3 feet.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_3/3.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "Shimanto enjoying the first charging stat of a mobile through wireless ultrasonic power."
+      },
+      {
+        "type": "text",
+        "html": "<p>Then when we get the confirmation it's possible to charge IoT devices, we started to make a massive thing that can really transfer a big power in a long distance.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_3/4.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "Single block power Receiver"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_3/5.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "Single block power Transmitter"
+      },
+      {
+        "type": "text",
+        "html": "<p>Then we test that transmitter and receiver and got the satisfied result as we expected. Then we make a full block of transmitter and receiver.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_3/6.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "Full block Transmitter"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_3/8.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "Full block Receiver"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_3/9.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "Driveing CKT for the Transmitter"
+      }
+    ]
   },
   {
     "id": "portfolio-item-04",
     "title": "Smart Cane",
-    "categoryText": "Ultrasonic-based smart cane that helps visually impaired users detect obstacles and navigate safely.",
-    "categories": ["Electronics", "Embeded_System", "Robotics_Mechatronics"],
-    "image": "portfolio/images/smartcane.JPG",
-    "link": "portfolio-item-04.html"
+    "summary": "Ultrasonic-based smart cane that helps visually impaired users detect obstacles and navigate safely.",
+    "year": null,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "Embedded_System",
+      "Robotics_Mechatronics"
+    ],
+    "cover": "portfolio/images/smartcane.JPG",
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_4/2.JPG"
+      },
+      {
+        "type": "heading",
+        "text": "Problem Statement"
+      },
+      {
+        "type": "text",
+        "html": "<p>Visually challenged persons face great difficulty in independent mobility and use the white cane as a mobility aid to detect close-by obstacles on the ground. However, the cane has many limitations. It can only detect obstacles up to knee level. Hence, the user cannot detect raised obstacles like elevated bars and frequently collides with them. Another problem is that the cane can only detect obstacles within 1 meter from the user. Also, obstacles like moving vehicles cannot be detected until dangerously close to the person. There is no smart cane available for automatic navigation to guide a person in outdoor navigation independently in urban areas, regardless of the person’s hearing status for reaching a particular destination. Based in WHO report (2011), 15% of our population is disabled and among them more than 4 million people are visual impaired. Almost 90% of the blind persons live in developing countries, with a majority below poverty line and hi-tech products are unaffordable to them. Access to such a smart cane is not available for individuals who are blind.</p>"
+      },
+      {
+        "type": "heading",
+        "text": "Solution Statement"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_4/1.JPG"
+      },
+      {
+        "type": "text",
+        "html": "<p>According to researchers, 83% of the physical input data from environment come through “Eyes”. Nearly 4 million of world’s population is blind, and hence deprived of one of the most important and informative asset “Eyes”. People with complete blindness or low vision often have a difficult time self-navigating outside well-known environments. In fact, physical movement is one of the biggest challenges for blind people. Traveling or simply walking down a crowded street may create great difficulty. Because of this, many people with low vision will bring a sighted friend, family member or walking cane to help navigate unknown environments. To make them independent we are proposing ultra-modern smart cane. We noticed that normal blind canes used by blinds have certain limitations like detecting pot-holes, detect objects, above knee obstacles etc. at the same time currently available sensor equipped canes are very costly and unaffordable. We want to develop an economical sensor equipped cane capable of assisting blind to navigate easily via vibratory and auditory signals so that their regular movement will become more secure. There will be no chance to get collide with any obstacle. There will be no dependency. They can do their regular work without any help. They can go to shop, office, refreshing walk, education etc.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_4/3.png"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_4/4.png"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_4/5.png"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_4/6.png"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_4/7.png"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_4/8.png"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_4/9.png"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_4/10.png"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_4/11.png"
+      }
+    ]
   },
   {
     "id": "portfolio-item-05",
     "title": "GPS Tracker",
-    "categoryText": "Low-cost vehicle GPS tracker that reports live location to a server.",
-    "categories": ["Electronics", "iOT", "Embeded_System"],
-    "image": "portfolio/images/gps tracker.JPG",
-    "link": "portfolio-item-05.html"
+    "summary": "Low-cost vehicle GPS tracker that reports live location to a server.",
+    "year": 2016,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "iOT",
+      "Embedded_System"
+    ],
+    "cover": "portfolio/images/gps tracker.JPG",
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/gps tracker.JPG"
+      },
+      {
+        "type": "heading",
+        "text": "ABOUT THE PROJECT"
+      },
+      {
+        "type": "text",
+        "html": "<p>It's a low cost vehicle tracker. it can track a car and send its geo location into the server where a user can monitor his car's latest position.</p>"
+      },
+      {
+        "type": "heading",
+        "text": "MADE FOR SHOW CASE IN ICT FAIR 2016"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_5/1.jpg"
+      }
+    ]
   },
   {
     "id": "portfolio-item-06",
     "title": "RFID Based Attendance System",
-    "categoryText": "Server-connected RFID attendance & access system for schools and offices.",
-    "categories": ["Electronics", "Embeded_System", "Automation"],
-    "image": "portfolio/images/rfid att.jpg",
-    "link": "portfolio-item-06.html"
+    "summary": "Server-connected RFID attendance & access system for schools and offices.",
+    "year": null,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "Embedded_System",
+      "Automation"
+    ],
+    "cover": "portfolio/images/rfid att.jpg",
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/rfid att.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "ABOUT THE PROJECT"
+      },
+      {
+        "type": "text",
+        "html": "<p>This is a server based RFID based attendence project, an admin can controll all the card holders, and can check current status</p><p>As technology has advanced, integrating the monitoring system with an automation technology will provides more convenient way monitoring the student. The radio frequency identification (RFID) technology is one of an automation technology that is beneficial in improving current traditional way of monitoring student. As every tag has its own unique ID, it is easy to differentiate every tag holder.</p><p>Here the purpose of RFID system for identifying and monitoring attendance System. In this system, the RFID tags enable the university management people to supervise the student movement in and out of the campus. When the RFID tags pass through the RFID reader in read range zone, then system will record the data from the RFID tags to the database system.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_6/3.png"
+      },
+      {
+        "type": "heading",
+        "text": "MADE FOR"
+      },
+      {
+        "type": "text",
+        "html": "<p>Small offices, School, and Secured places.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_6/1.png"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_6/2.png"
+      }
+    ]
   },
   {
     "id": "portfolio-item-07",
     "title": "Emergency Calling System",
-    "categoryText": "Embedded emergency alert / calling system project.",
-    "categories": ["Electronics", "Embeded_System", "Automation"],
-    "image": "portfolio/images/emergency button.jpg",
-    "link": "portfolio-item-07.html"
+    "summary": "Embedded emergency alert / calling system project.",
+    "year": null,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "Embedded_System",
+      "Automation"
+    ],
+    "cover": "portfolio/images/emergency button.jpg",
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/Blind_pathfinder.JPG"
+      },
+      {
+        "type": "heading",
+        "text": "ABOUT THE PROJECT"
+      },
+      {
+        "type": "text",
+        "html": "<p>A pick and place machine is used in indrustry to replace human to do that precission work with out touch of the human hand. they are much pressise as .01mm</p><p>But the gole of this machine is to maintain a stack of paper and deleiver that to the client as defined as in server.</p>"
+      },
+      {
+        "type": "heading",
+        "text": "MADE FOR"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_2/1.jpeg"
+      },
+      {
+        "type": "youtube",
+        "id": "Kyrw5u-79t8"
+      },
+      {
+        "type": "youtube",
+        "id": "m7zT-T6u2JU"
+      }
+    ]
   },
   {
     "id": "portfolio-item-08",
     "title": "Voice Controlled Home Automation",
-    "categoryText": "Voice-controlled home automation exploring Google Assistant & smart home integration.",
-    "categories": ["Electronics", "iOT", "AI", "Automation"],
-    "image": "portfolio/images/home automation.jpg",
-    "link": "portfolio-item-08.html"
+    "summary": "Voice-controlled home automation exploring Google Assistant & smart home integration.",
+    "year": null,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "iOT",
+      "AI",
+      "Automation"
+    ],
+    "cover": "portfolio/images/home automation.jpg",
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_8/1.png"
+      },
+      {
+        "type": "heading",
+        "text": "ABOUT THE PROJECT"
+      },
+      {
+        "type": "text",
+        "html": "<p>Google Home is a smart speaker developed by Google. Google Home enables users to speak voice commands to interact with services through the Home’s intelligent personal assistant called Google Assistant. Google home has an AI-API developed by google. It can trigger Smart home appliance and implement the daily used task by the user voice command as it can turn on or off your light, fan, AC, play music, search Web. It can play music, can answer any question, “That is available in internet” and can control appliance, but google do not developing the controlling peripherals for the smart home appliance other 3rd party company like “Philips hue” “Belkin Wemo” are making those things. However, world largest home automation company like “NEST” “Honeywell” “TP-Link” are also coming on this AI or Home Assistant service. As mention, Amazon also developed “Amazon Echo” and Apple has claimed that they have a device that called “HomePod” which will be available in this year December. Coming tomorrow will be the time of home assistant.</p>"
+      },
+      {
+        "type": "youtube",
+        "id": "RLN5E1JoZ2g"
+      }
+    ]
   },
   {
     "id": "portfolio-item-09",
     "title": "Indoor Blind Navigation",
-    "categoryText": "Wearable navigation aid to help visually impaired users move safely indoors.",
-    "categories": ["Electronics", "Embeded_System", "Robotics_Mechatronics"],
-    "image": "portfolio/images/Blind_pathfinder.JPG",
-    "link": "portfolio-item-09.html"
+    "summary": "Wearable navigation aid to help visually impaired users move safely indoors.",
+    "year": null,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "Embedded_System",
+      "Robotics_Mechatronics"
+    ],
+    "cover": "portfolio/images/Blind_pathfinder.JPG",
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/Blind_pathfinder.JPG"
+      },
+      {
+        "type": "heading",
+        "text": "ABOUT THE PROJECT"
+      },
+      {
+        "type": "text",
+        "html": "<p>Visually impaired people always face problem while commuting indoors, they have to depends on someone or a typical cane, in contrast indoor blind navigation helps to move those people more sufficiently and accurately.</p><p>On that point a wearable technology can help them flawlessly.</p>"
+      },
+      {
+        "type": "heading",
+        "text": "MADE FOR"
+      },
+      {
+        "type": "text",
+        "html": "<p>Visually impaired people, inspecific who works indoor.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_9/1.png"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_9/2.png"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_9/3.png"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/pfo_9/4.png"
+      }
+    ]
   },
   {
     "id": "portfolio-item-10",
     "title": "Power Meter",
-    "categoryText": "DC power meter for measuring real power delivered to a load.",
-    "categories": ["Electronics", "Power"],
-    "image": "portfolio/images/power meter.jpg",
-    "link": "portfolio-item-10.html"
+    "summary": "DC power meter for measuring real power delivered to a load.",
+    "year": 2017,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "Power"
+    ],
+    "cover": "portfolio/images/power meter.jpg",
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/power meter.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "ABOUT THE PROJECT"
+      },
+      {
+        "type": "text",
+        "html": "<p>DC power meter to get the real power calculation which is consumed by the load.</p>"
+      },
+      {
+        "type": "heading",
+        "text": "MADE FOR"
+      },
+      {
+        "type": "text",
+        "html": "<p>Samsung R&D Bangladesh to calculate the DC power that is <a class=\"ajax\" href=\"portfolio-item-03\">wirelessly</a> transferd from the power receiver to the load as mobile phone.</p>"
+      }
+    ]
   },
   {
     "id": "portfolio-item-11",
     "title": "Seminar at UIU (As an Instructor)",
-    "categoryText": "Guest instructor session on IoT at United International University (UIU).",
-    "categories": ["Thinking_Traveling"],
-    "image": "portfolio/images/seminar/1.jpg",
-    "link": "portfolio-item-11.html"
+    "summary": "Guest instructor session on IoT at United International University (UIU).",
+    "year": null,
+    "featured": false,
+    "categories": [
+      "Thinking_Traveling"
+    ],
+    "cover": "portfolio/images/seminar/1.jpg",
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/seminar/1.jpg"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/seminar/2.jpg"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/seminar/3.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "ABOUT THIS SEMINAR"
+      },
+      {
+        "type": "text",
+        "html": "<p>It was a seminar held at UIU organised by UIU cisco network Academy, I was a gust instructor there, to give a simple instruction about what is IOT , how IOT is increasing the data for our internet. after the end i give them a simple demonstration of IOT useing Artificial intelegence.</p>"
+      }
+    ]
   },
   {
     "id": "portfolio-item-12",
     "title": "Seminar at AIUB (As an Instructor)",
-    "categoryText": "Guest instructor session on Raspberry Pi & embedded systems at AIUB.",
-    "categories": ["Thinking_Traveling"],
-    "image": "portfolio/images/seminar/4.jpg",
-    "link": "portfolio-item-12.html"
+    "summary": "Guest instructor session on Raspberry Pi & embedded systems at AIUB.",
+    "year": null,
+    "featured": false,
+    "categories": [
+      "Thinking_Traveling"
+    ],
+    "cover": "portfolio/images/seminar/4.jpg",
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/seminar/4.jpg"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/seminar/5.jpg"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/seminar/6.jpg"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/seminar/7.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "ABOUT THIS SEMINAR"
+      },
+      {
+        "type": "text",
+        "html": "<p>It was a seminar held at AIUB organised by AIUB Robotics Club, I was a gust instructor there, i give a long presentation on SBC(Single Board Computer) I used Raspberry Pi as SBC and how to use that in verious application such as Embedded system or IOT application.</p>"
+      }
+    ]
   },
   {
     "id": "portfolio-item-13",
     "title": "Fingerprint Lock and Attendance System",
-    "categoryText": "Biometric fingerprint-based door lock and attendance system with server sync.",
-    "categories": ["Electronics", "Embeded_System", "Automation"],
-    "image": "portfolio/images/finger.jpg",
-    "link": "portfolio-item-13.html"
+    "summary": "Biometric fingerprint-based door lock and attendance system with server sync.",
+    "year": null,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "Embedded_System",
+      "Automation"
+    ],
+    "cover": "portfolio/images/finger.jpg",
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/finger.jpg"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/finger1.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "ABOUT THE PROJECT"
+      },
+      {
+        "type": "text",
+        "html": "<p>This is a Biomatric sensor based project to lock and unlock any door, it pings the access identification to the server.</p>"
+      },
+      {
+        "type": "heading",
+        "text": "MADE FOR"
+      },
+      {
+        "type": "text",
+        "html": "<p>it can work with any kind of ERP, HRM.</p>"
+      }
+    ]
   },
   {
     "id": "portfolio-item-14",
     "title": "University Final Year Thesis",
-    "categoryText": "Final year thesis on optimal MTU (Maximum Transmission Unit) sizing for network performance.",
-    "categories": ["Thinking_Traveling"],
-    "image": "portfolio/images/thesis2.jpg",
-    "link": "portfolio-item-14.html"
+    "summary": "Final year thesis on optimal MTU (Maximum Transmission Unit) sizing for network performance.",
+    "year": 2018,
+    "featured": false,
+    "categories": [
+      "Thinking_Traveling"
+    ],
+    "cover": "portfolio/images/thesis2.jpg",
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/thesis2.jpg"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/thesis.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "ABOUT THE PROJECT"
+      },
+      {
+        "type": "text",
+        "html": "<p>Maximum MTU (Maximum Transmission Unite) Calculation for any link</p>"
+      },
+      {
+        "type": "heading",
+        "text": "Project Objective"
+      },
+      {
+        "type": "text",
+        "html": "<p>We mainly analyzes the impact of the maximum transmission unit (MTU) on application performance. Simulation models are created and amount of experiments for typical FTP applications are conducted. Based on comparisons with different MTU value and different scenarios corresponding to the FTP upload response time, optimal settings are found. Optimal settings are required to achieve minimal delay in a network. We have studied and analyzed possible reasons for causing network delays. We have obtained theoretical explanation and basic formulas to understand basic mechanism of fragmentation, packet switching, header calculation, multiple delay calculations (like queuing delay, propagation delay, processing delay, and transmission delay). From those theoretical expressions, we found parameters like link capacity, number of hops, number of headers, header sizes, packet sizes, fragmentation, etc. we have varied these parameters to MATLAB based simulations and tried to determine the theoretical concept. We have experimented multiple times varying parameter and given best output results.</p>"
+      }
+    ]
   },
   {
     "id": "portfolio-item-15",
     "title": "Digitalization of Analog Sweater Weaving Machine",
-    "categoryText": "PID-controlled motor automation for digitizing an analog sweater weaving machine.",
-    "categories": ["Electronics", "Robotics_Mechatronics", "Automation"],
-    "image": "portfolio/images/weaving.jpg",
-    "link": "portfolio-item-15.html"
+    "summary": "PID-controlled motor automation for digitizing an analog sweater weaving machine.",
+    "year": null,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "Robotics_Mechatronics",
+      "Automation"
+    ],
+    "cover": "portfolio/images/weaving.jpg",
+    "blocks": [
+      {
+        "type": "video",
+        "src": "portfolio/images/weaving.mp4"
+      },
+      {
+        "type": "video",
+        "src": "portfolio/images/weaving2.mp4"
+      },
+      {
+        "type": "heading",
+        "text": "ABOUT THE PROJECT"
+      },
+      {
+        "type": "text",
+        "html": "<p>This was made from my hoby project, it was a macatronics project with PID controlled motor breaking and accleration.</p>"
+      }
+    ]
   },
   {
     "id": "portfolio-item-16",
     "title": "Power Hackathon",
-    "categoryText": "Hackathon project addressing illegal power leakage/tapping detection.",
-    "categories": ["Electronics", "Power", "Automation"],
-    "image": "portfolio/images/power_hacathon.jpg",
-    "link": "portfolio-item-16.html"
+    "summary": "Hackathon project addressing illegal power leakage/tapping detection.",
+    "year": null,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "Power",
+      "Automation"
+    ],
+    "cover": "portfolio/images/power_hacathon.jpg",
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/power_hacathon.jpg"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/power_hacathon1.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "ABOUT THE PROJECT"
+      },
+      {
+        "type": "text",
+        "html": "<p>We propose our design to reduse power lekage for iligal ppower conection.</p>"
+      },
+      {
+        "type": "heading",
+        "text": "MADE FOR"
+      },
+      {
+        "type": "text",
+        "html": "<p>we didn't get any thing for this, but we lurn a lot from that hacathon with those awsome guy, Thaks to Ratul, Asif, Tomal & Mehedi to colaborte with me.</p>"
+      }
+    ]
   },
   {
     "id": "portfolio-item-17",
     "title": "Web Controlled RGB LED",
-    "categoryText": "Music-reactive, web-controlled RGB LED lighting project.",
-    "categories": ["Electronics", "iOT", "Embeded_System"],
-    "image": "portfolio/images/rgbled.png",
-    "link": "portfolio-item-17.html"
+    "summary": "Music-reactive, web-controlled RGB LED lighting project.",
+    "year": null,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "iOT",
+      "Embedded_System"
+    ],
+    "cover": "portfolio/images/rgbled.png",
+    "blocks": [
+      {
+        "type": "video",
+        "src": "portfolio/images/RGB led.mp4"
+      },
+      {
+        "type": "heading",
+        "text": "ABOUT THE PROJECT"
+      },
+      {
+        "type": "text",
+        "html": "<p>I love this thing, i will make those colar tranision with music node i play in my room.</p>"
+      }
+    ]
   }
 ]

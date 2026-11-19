@@ -1,108 +1,180 @@
-
-
 /* global variables */
 var classicLayout = false;
 var portfolioKeyword;
 var mapCanvas;
 
 
-$(document).ready(function () {
-    // 1. Load global components (header/footer)
-    loadGlobalHeaderFooter();
+// ==============================
+// PROJECTS (data-driven from portfolio.json)
+// ------------------------------
+// Every project lives in portfolio.json. The grid cards and the project
+// detail view are both rendered from it — no per-project HTML file needed.
+// See PORTFOLIO.md for the entry format.
+// ==============================
 
-    // 2. Load dynamic portfolio items grid
-    loadPortfolioItems();
+var projectsRequest = null;
 
-    // 3. Set up dynamic prev/next navigation links
-    setupDynamicPortfolioNav();
-
-	
-});
-
-
-function loadGlobalHeaderFooter() {
-	// Inject header.html into the placeholder
-	if ($('#global-header').length) {
-		$('#global-header').load('portfolio_header.html', function () {
-			// Re-initialize menu toggles or events if needed
-			if (typeof $.fn.uniform !== 'undefined') {
-				$('input:checkbox, input:radio').uniform();
-			}
-		});
+function getProjects() {
+	if (!projectsRequest) {
+		projectsRequest = $.getJSON('portfolio.json').then(sortProjects);
 	}
+	return projectsRequest;
 }
 
-function setupDynamicPortfolioNav() {
-	// console.log("=== Debugging Portfolio Nav Setup ===");
-
-	// 1. Get current page filename
-	var currentPath = window.location.pathname.split('/').pop();
-
-	// If opening root index page, check location hash or default
-	if (!currentPath || currentPath === 'index.html') {
-		currentPath = window.location.hash.replace('#/', '');
-	}
-
-	// console.log("Current detected path/filename:", currentPath);
-
-	// 2. Fetch portfolio.json
-	$.getJSON('portfolio.json')
-		.done(function (data) {
-			// console.log("Successfully fetched portfolio.json. Items loaded:", data.length);
-
-			if (!data || !data.length) {
-				// console.warn("portfolio.json is empty or invalid format.");
-				return;
-			}
-
-			// Find index of current page item
-			var currentIndex = data.findIndex(function (item) {
-				// Loose match: checks if link contains the current filename
-				return item.link && (item.link === currentPath || currentPath.indexOf(item.link) !== -1);
-			});
-
-			// console.log("Matched index in portfolio.json:", currentIndex);
-
-			// Fallback if not found
-			if (currentIndex === -1) {
-				// console.warn("Could not match '" + currentPath + "' inside portfolio.json. Defaulting to index 0.");
-				currentIndex = 0;
-			}
-
-			// Calculate Prev/Next (with wrap-around)
-			var prevIndex = (currentIndex - 1 + data.length) % data.length;
-			var nextIndex = (currentIndex + 1) % data.length;
-
-			var prevLink = data[prevIndex].link;
-			var nextLink = data[nextIndex].link;
-
-			// console.log("Prev Target -> Index:", prevIndex, "| Link:", prevLink, "| Title:", data[prevIndex].title);
-			// console.log("Next Target -> Index:", nextIndex, "| Link:", nextLink, "| Title:", data[nextIndex].title);
-
-			// Update DOM
-			var $navs = $('.portfolio-nav');
-			// console.log("Found .portfolio-nav containers on page:", $navs.length);
-
-			$navs.each(function (i, el) {
-				$(el).find('a.prev').attr('href', prevLink).attr('title', data[prevIndex].title);
-				$(el).find('a.next').attr('href', nextLink).attr('title', data[nextIndex].title);
-				$(el).find('a.back').attr('href', 'index.html#/portfolio');
-			});
-
-			// console.log("=== Portfolio Nav Updated Successfully ===");
+// Featured first, then newest year first. Projects without a year go last.
+// Ties keep their order from portfolio.json.
+function sortProjects(data) {
+	return $.map(data || [], function (item, i) { return { item: item, i: i }; })
+		.sort(function (a, b) {
+			var fa = a.item.featured ? 1 : 0, fb = b.item.featured ? 1 : 0;
+			if (fa !== fb) return fb - fa;
+			var ya = a.item.year || 0, yb = b.item.year || 0;
+			if (ya !== yb) return yb - ya;
+			return a.i - b.i;
 		})
-		.fail(function (jqxhr, textStatus, error) {
-			// console.error("Failed to load portfolio.json! Error status:", textStatus, "| Error details:", error);
-		});
+		.map(function (x) { return x.item; });
 }
 
-// Re-trigger if template loads items dynamically via AJAX
-$(document).ajaxComplete(function (event, xhr, settings) {
-	if (settings.url && settings.url.indexOf('portfolio-item') !== -1) {
-		// console.log("AJAX page swap detected. Re-running navigation setup...");
-		setupDynamicPortfolioNav();
+// Accepts "smart-cane", "portfolio-item-04" or the legacy "portfolio-item-04.html".
+function projectIdFromUrl(url) {
+	return String(url || '').split('/').pop().replace(/\.html?$/i, '');
+}
+
+function escapeHtml(s) {
+	return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+		return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+	});
+}
+
+function loadPortfolioItems() {
+	var $grid = $('#portfolio-grid');
+	if (!$grid.length) return;
+
+	getProjects().done(function (projects) {
+		$grid.empty();
+
+		$.each(projects, function (index, item) {
+			var classes = (item.categories || []).join(' ') + (item.featured ? ' is-featured' : '');
+			var title = escapeHtml(item.title);
+			var year = item.year ? '<span class="project-year">' + escapeHtml(item.year) + '</span>' : '';
+			var badge = item.featured ? '<span class="project-badge">Featured</span>' : '';
+
+			$grid.append(
+				'<div class="media-cell hentry ' + escapeHtml(classes) + '">' +
+					'<div class="media-box">' +
+						'<img src="' + escapeHtml(item.cover) + '" alt="' + title + '">' +
+						badge +
+						'<div class="mask"></div>' +
+						'<a href="' + escapeHtml(item.id) + '" class="ajax" title="' + title + '"></a>' +
+					'</div>' +
+					'<div class="media-cell-desc">' +
+						'<h3>' + title + year + '</h3>' +
+						'<p class="category">' + escapeHtml(item.summary) + '</p>' +
+					'</div>' +
+				'</div>'
+			);
+		});
+
+		// Hide filter buttons that no project uses
+		$('#filters a[data-filter]').each(function () {
+			var f = $(this).attr('data-filter');
+			$(this).parent().toggle(f === '*' || $grid.children(f).length > 0);
+		});
+
+		if ($.fn.isotope) {
+			$grid.imagesLoaded(function () {
+				$grid.isotope('reloadItems').isotope({ ready: true });
+			});
+		}
+	});
+}
+
+function renderBlock(b) {
+	switch (b.type) {
+		case 'image':
+			return '<p><img src="' + escapeHtml(b.src) + '" alt="' + escapeHtml(b.alt || 'project') + '"></p>' +
+				(b.caption ? '<h5>' + escapeHtml(b.caption) + '</h5>' : '');
+		case 'video':
+			return '<p><video controls preload="metadata" playsinline src="' + escapeHtml(b.src) + '"></video></p>';
+		case 'youtube':
+			return '<p><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/' + escapeHtml(b.id) +
+				'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe></p>';
+		case 'embed':
+			return '<p><iframe width="560" height="315" src="' + escapeHtml(b.src) + '" frameborder="0" allowfullscreen loading="lazy"></iframe></p>';
+		case 'heading':
+			return '<h5>' + escapeHtml(b.text) + '</h5>';
+		case 'text':
+			return b.html || ''; // trusted: written by the site owner in portfolio.json
+		default:
+			return '';
 	}
+}
+
+function renderProject(item, prev, next) {
+	var nav = function (extra) {
+		return '<div class="portfolio-nav' + extra + '">' +
+			'<a class="prev ajax" href="' + escapeHtml(prev.id) + '" title="' + escapeHtml(prev.title) + '"></a>' +
+			'<a class="back" href="#/portfolio" title="Back to portfolio"></a>' +
+			'<a class="next ajax" href="' + escapeHtml(next.id) + '" title="' + escapeHtml(next.title) + '"></a>' +
+			'</div>';
+	};
+
+	// Optional facts row: "meta": {"Client": "...", "Role": "...", "Tech": "..."}
+	var meta = '';
+	if (item.year || item.meta) {
+		var rows = [];
+		if (item.year) rows.push(['Year', item.year]);
+		$.each(item.meta || {}, function (k, v) { rows.push([k, v]); });
+		meta = '<ul class="project-meta">' + $.map(rows, function (r) {
+			return '<li><span>' + escapeHtml(r[0]) + '</span>' + escapeHtml(r[1]) + '</li>';
+		}).join('') + '</ul>';
+	}
+
+	// Optional buttons: "links": [{"label": "GitHub", "url": "https://..."}]
+	var links = '';
+	if (item.links && item.links.length) {
+		links = '<p class="project-links">' + $.map(item.links, function (l) {
+			return '<a class="button" href="' + escapeHtml(l.url) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(l.label) + '</a>';
+		}).join(' ') + '</p>';
+	}
+
+	// Consecutive heading/text blocks are grouped into one centered text column.
+	var body = '', group = '';
+	$.each(item.blocks || [], function (i, b) {
+		var isText = b.type === 'heading' || b.type === 'text';
+		if (isText) { group += renderBlock(b); return; }
+		if (group) { body += '<div class="mini-text">' + group + '</div>'; group = ''; }
+		body += renderBlock(b);
+	});
+	if (group) body += '<div class="mini-text">' + group + '</div>';
+
+	return '<div class="portfolio-single page-layout"><div class="layout-medium"><article class="hentry">' +
+		'<header class="entry-header">' + nav('') +
+		'<h1 class="entry-title">' + escapeHtml(item.title) + '</h1>' + meta +
+		'</header>' +
+		'<div class="entry-content">' + body + links + nav(' bottom') + '</div>' +
+		'</article></div></div>';
+}
+
+// Resolves with the rendered HTML for a project id, or rejects if unknown.
+function getProjectHtml(url) {
+	var id = projectIdFromUrl(url);
+	return getProjects().then(function (projects) {
+		for (var i = 0; i < projects.length; i++) {
+			if (projects[i].id === id) {
+				var n = projects.length;
+				return renderProject(projects[i], projects[(i - 1 + n) % n], projects[(i + 1) % n]);
+			}
+		}
+		return $.Deferred().reject().promise();
+	});
+}
+
+
+$(document).ready(function () {
+	loadPortfolioItems();
 });
+
 
 // Smart Section Navigation: Instant home skip + robust edge detection for content sections
 (function () {
@@ -218,38 +290,6 @@ $(document).ajaxComplete(function (event, xhr, settings) {
 })();
 
 
-function loadPortfolioItems() {
-	$.getJSON('portfolio.json', function (data) {
-		var $grid = $('#portfolio-grid');
-		$grid.empty();
-
-		$.each(data, function (index, item) {
-			var categoryClasses = item.categories.join(' ');
-
-			var itemHtml = `
-                <div class="media-cell ${categoryClasses} hentry">
-                    <div class="media-box">
-                        <img src="${item.image}" alt="${item.title}">
-                        <div class="mask"></div>
-                        <a href="${item.link}" class="ajax" title="${item.title}"></a>
-                    </div>
-                    <div class="media-cell-desc">
-                        <h3>${item.title}</h3>
-                        <p class="category">${item.categoryText}</p>
-                    </div>
-                </div>
-            `;
-			$grid.append(itemHtml);
-		});
-
-		// Re-initialize or reload Isotope layout once images/DOM are ready
-		if ($.fn.isotope) {
-			$grid.imagesLoaded(function () {
-				$grid.isotope('reloadItems').isotope({ ready: true });
-			});
-		}
-	});
-}
 
 
 (function ($) {
@@ -873,8 +913,14 @@ function loadPortfolioItems() {
 		var p = $('.p-overlay:not(.active)').first();
 		pActive = $('.p-overlay.active');
 
-		// ajax : fill data
-		p.empty().load(url + ' .portfolio-single', function () {
+		// fill data: render from portfolio.json; fall back to fetching an HTML page
+		var fill = function (done) {
+			getProjectHtml(url)
+				.done(function (html) { p.empty().html(html); done(); })
+				.fail(function () { p.empty().load(url + ' .portfolio-single', done); });
+		};
+
+		fill(function () {
 			NProgress.set(0.5);
 
 			// wait for images to be loaded
