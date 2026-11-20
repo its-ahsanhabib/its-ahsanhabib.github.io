@@ -7,6 +7,8 @@ Newest first. One entry per change set, with dates as YYYY-MM-DD.
   OpenStreetMap tiles (free, no key; attribution shown) darkened with `.map-tiles-dark` CSS filter.
 - Added WhatsApp (`wa.me/8801738889858`) to the sidebar and the Contact "Let's Socialize" row
   (SVG-mask icon, green on hover).
+- Follow-up: map darker with a teal tint; WhatsApp and email icons resized to match the other
+  social icons (sidebar and Contact).
 
 ## 2026-11-20: Sidebar social links
 - Removed Facebook, Twitter and Instagram from the sidebar; added an Email icon (mailto, uses
