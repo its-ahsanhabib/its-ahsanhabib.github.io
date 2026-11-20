@@ -2,6 +2,12 @@
 
 Newest first. One entry per change set, with dates as YYYY-MM-DD.
 
+## 2026-11-21: New favicon and "Embed with Ahsan" title
+- Favicon: green chip with a white "A" on #1c262b (`images/ico/favicon.svg`, plus favicon.ico
+  16/32/48, favicon-32.png, apple-touch-icon.png 180 (square), icon-192/512.png). Old favicon.jpg removed.
+- Title: "Embed with Ahsan · Ahsan Habib, Embedded Systems Engineer"; og:site_name / og:title,
+  apple-mobile-web-app-title, theme-color, and a `site.webmanifest`.
+
 ## 2026-11-21: Writing page in two columns
 - Left "Technological" (empty for now: shows a "Read on LinkedIn" note until tech posts are added),
   right "Philosophical" (the 40 Bengali posts). `category` and optional `link` fields in `blog.json`;

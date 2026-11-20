@@ -27,6 +27,7 @@ whenever something structural changes.
 | `images/blog/` | (create when needed) covers/images for new hand-written posts |
 | `portfolio/images/<project-id>/` | Images for each project (older projects use loose files in `portfolio/images/`) |
 | `portfolio-item-01..17.html` | Redirect stubs only, kept for old shared links. Don't add new ones. `-07` (removed project) redirects to `#/portfolio` |
+| `images/ico/` | Favicons: `favicon.svg` is the source (chip "A" logo); PNG/ICO sizes are rendered from it. Brand name: "Embed with Ahsan" |
 | `tools/` | `linkedin_fetch.py` + `add_projects.py` (LinkedIn posts → projects), `import_somewhereinblog.py` (Bengali blog → `blog.json`) |
 
 ## Projects (portfolio.json)

@@ -1,0 +1,13 @@
+{
+  "name": "Embed with Ahsan",
+  "short_name": "Embed w/ Ahsan",
+  "description": "Ahsan Habib, Embedded Systems Engineer: firmware, PCB design and IoT products.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#1c262b",
+  "theme_color": "#1c262b",
+  "icons": [
+    { "src": "images/ico/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "images/ico/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
