@@ -194,12 +194,12 @@ function renderHomeFeatured() {
 // BLOG / WRITING (data-driven from blog.json)
 // ------------------------------
 // Post list in #blog-list; a post opens in the same overlay as projects at #/blog/<id>.
-// Each entry: id, title, date (YYYY-MM-DD), lang, summary, cover?, html OR text, source?
+// Each entry: id, category (tech|philosophy), title, date (YYYY-MM-DD), lang, summary, cover?,
+// link? (card opens this instead) OR html/text body, source?
 // See BLOG.md for the format.
 // ==============================
 var postsRequest = null;
-var BLOG_PAGE_SIZE = 12;
-var blogShown = 0;
+var BLOG_PAGE_SIZE = 8; // per column (2 per row)
 var MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 function getPosts() {
@@ -224,15 +224,21 @@ function postBodyHtml(p) {
 	}).join('');
 }
 
-function renderBlogList(reset) {
-	var $list = $('#blog-list');
+// One list per column: #blog-list-<category> (categories "tech" and "philosophy").
+// A card with "link" opens that URL (e.g. a portfolio project); otherwise the post opens at #/blog/<id>.
+var blogShown = {};
+
+function renderBlogList(category, reset) {
+	var $list = $('#blog-list-' + category);
 	if (!$list.length) return;
-	getPosts().done(function (posts) {
-		if (reset) { $list.empty(); blogShown = 0; }
-		var next = posts.slice(blogShown, blogShown + BLOG_PAGE_SIZE);
+	getPosts().done(function (all) {
+		var posts = $.grep(all, function (p) { return (p.category || 'philosophy') === category; });
+		if (reset || !blogShown[category]) { $list.empty(); blogShown[category] = 0; }
+		var next = posts.slice(blogShown[category], blogShown[category] + BLOG_PAGE_SIZE);
 		$list.append($.map(next, function (p) {
 			var lang = p.lang ? ' lang="' + escapeHtml(p.lang) + '"' : '';
-			return '<a class="blog-card' + (p.cover ? ' has-cover' : '') + '" href="#/blog/' + escapeHtml(p.id) + '">' +
+			var href = p.link || ('#/blog/' + p.id);
+			return '<a class="blog-card' + (p.cover ? ' has-cover' : '') + '" href="' + escapeHtml(href) + '">' +
 				(p.cover ? '<span class="blog-card-img" style="background-image:url(\'' + escapeHtml(p.cover) + '\')"></span>' : '') +
 				'<span class="blog-card-body">' +
 				'<span class="blog-card-date">' + escapeHtml(formatPostDate(p.date)) + '</span>' +
@@ -241,15 +247,23 @@ function renderBlogList(reset) {
 				'<span class="blog-card-more">Read &rarr;</span>' +
 				'</span></a>';
 		}).join(''));
-		blogShown += next.length;
-		$('#blog-more').toggle(blogShown < posts.length);
-		$('#blog-count').text(posts.length);
+		blogShown[category] += next.length;
+		$('.blog-more[data-category="' + category + '"]').toggle(blogShown[category] < posts.length);
+		$('.writing-empty[data-empty-for="' + category + '"]').toggle(posts.length === 0);
 	});
+}
+
+function renderAllBlogLists() {
+	$('.writing-col[data-category]').each(function () { renderBlogList($(this).data('category'), true); });
 }
 
 function getPostHtml(url) {
 	var id = projectIdFromUrl(url);
-	return getPosts().then(function (posts) {
+	return getPosts().then(function (all) {
+		var target = $.grep(all, function (p) { return String(p.id) === id; })[0];
+		if (!target || target.link) return $.Deferred().reject().promise();
+		var cat = target.category || 'philosophy';
+		var posts = $.grep(all, function (p) { return !p.link && (p.category || 'philosophy') === cat; });
 		for (var i = 0; i < posts.length; i++) {
 			if (String(posts[i].id) === id) {
 				var p = posts[i], n = posts.length;
@@ -281,8 +295,8 @@ function getPostHtml(url) {
 $(document).ready(function () {
 	loadPortfolioItems();
 	renderHomeFeatured();
-	renderBlogList(true);
-	$(document).on('click', '#blog-more', function (e) { e.preventDefault(); renderBlogList(false); });
+	renderAllBlogLists();
+	$(document).on('click', '.blog-more', function (e) { e.preventDefault(); renderBlogList($(this).data('category'), false); });
 });
 
 

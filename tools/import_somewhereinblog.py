@@ -145,7 +145,7 @@ def main():
         if (len(text) < 20 and not images) or (dead >= 3 and len(text) < 80 and not images):
             skipped.append((pid, f"only lost images left: {t}")); continue
         posts.append({
-            "id": pid, "title": t, "date": iso_date(d), "lang": "bn",
+            "id": pid, "category": "philosophy", "title": t, "date": iso_date(d), "lang": "bn",
             "summary": (text[:157] + "…") if len(text) > 160 else text,
             "cover": images[0] if images else None,
             "html": html, "source": f"{BASE}/blog/{BLOG}/{pid}",

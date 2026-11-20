@@ -2,6 +2,12 @@
 
 Newest first. One entry per change set, with dates as YYYY-MM-DD.
 
+## 2026-11-21: Writing page in two columns
+- Left "Technological" (empty for now: shows a "Read on LinkedIn" note until tech posts are added),
+  right "Philosophical" (the 40 Bengali posts). `category` and optional `link` fields in `blog.json`;
+  tiles 2 per row (1 on phones), 8 per "Load more"; prev/next stays in the column. Columns stack on
+  narrow screens (tech first).
+
 ## 2026-11-21: Blog on the Writing page
 - Imported Bengali posts (2011–2016) from somewhereinblog.net into `blog.json` with
   `tools/import_somewhereinblog.py`; 2 picture-only posts skipped. Owner then removed 16 posts

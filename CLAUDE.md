@@ -63,7 +63,10 @@ Before publishing, flag these to the owner: personal content (family), names of 
 employer/NDA-sensitive products, and anything you guessed (captions, years, categories).
 
 ## Blog (blog.json)
-- 40 Bengali posts (2011–2016) imported from somewhereinblog.net/blog/ahkshopno; newest first, 12 per "Load more".
+- Writing page = two columns from `blog.json` by `category`, tiles 2 per row, 8 per "Load more":
+  left `tech` (empty on purpose: the owner adds technical posts later; until then a
+  "Read on LinkedIn" note shows, `.writing-empty`), right `philosophy` (40 Bengali posts, 2011–2016,
+  from somewhereinblog.net/blog/ahkshopno). Don't fill the tech column from portfolio projects.
   No images in posts (owner's choice). 16 posts were removed by the owner; their ids are in `EXCLUDE_IDS`
   in `tools/import_somewhereinblog.py`, so they never come back on re-import.
 - Overlay routing is shared with projects: `giveDetailUrl()` recognises `#/portfolio/<id>` and `#/blog/<id>`

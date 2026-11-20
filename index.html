@@ -1037,23 +1037,35 @@
                         <!-- page-title -->
 
 
-                        <!-- BLOG: posts rendered from blog.json by renderBlogList() in js/main.js -->
-                        <p class="blog-intro">My Bengali blog: stories, poems and thoughts from 2011&ndash;2016,
-                            originally on somewhereinblog.net.</p>
-                        <div class="blog-list" id="blog-list"></div>
-                        <p class="blog-more-wrap"><a href="#" class="button" id="blog-more" style="display:none">Load more posts</a></p>
+                        <!-- WRITING: two columns rendered from blog.json (category "tech" | "philosophy") by renderBlogList() in js/main.js -->
+                        <div class="writing-cols">
 
-                        <!-- WRITING: newer posts live on LinkedIn -->
-                        <div class="writing-card">
-                            <i class="pe-7s-news-paper"></i>
-                            <p>
-                                These days I share project write-ups, engineering notes and updates on firmware,
-                                hardware and IoT product development on LinkedIn.
-                            </p>
-                            <p class="launch">
-                                <a class="button" href="https://www.linkedin.com/in/embedwithahsan/recent-activity/all/"
-                                    target="_blank" rel="noopener noreferrer">READ MY POSTS ON LINKEDIN</a>
-                            </p>
+                            <div class="writing-col" data-category="tech">
+                                <div class="writing-col-head">
+                                    <i class="ic-pcb"></i>
+                                    <h2>Technological</h2>
+                                    <p>Embedded work: hardware, firmware and the lessons along the way.</p>
+                                </div>
+                                <div class="blog-list" id="blog-list-tech"></div>
+                                <!-- shown while there are no "tech" posts in blog.json -->
+                                <div class="writing-empty" data-empty-for="tech" style="display:none">
+                                    <i class="pe-7s-news-paper"></i>
+                                    <p>My technical write-ups on firmware, hardware and IoT product development are on LinkedIn for now.</p>
+                                    <a class="button" href="https://www.linkedin.com/in/embedwithahsan/recent-activity/all/" target="_blank" rel="noopener noreferrer">Read on LinkedIn</a>
+                                </div>
+                                <p class="blog-more-wrap"><a href="#" class="button blog-more" data-category="tech" style="display:none">Load more</a></p>
+                            </div>
+
+                            <div class="writing-col" data-category="philosophy">
+                                <div class="writing-col-head">
+                                    <i class="pe-7s-light"></i>
+                                    <h2>Philosophical</h2>
+                                    <p>Bengali stories, poems and thoughts (2011&ndash;2016), first published on somewhereinblog.net.</p>
+                                </div>
+                                <div class="blog-list" id="blog-list-philosophy"></div>
+                                <p class="blog-more-wrap"><a href="#" class="button blog-more" data-category="philosophy" style="display:none">Load more</a></p>
+                            </div>
+
                         </div>
                         <!-- WRITING -->
 

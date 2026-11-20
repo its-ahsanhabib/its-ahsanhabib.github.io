@@ -2705,3 +2705,27 @@ html, body {
 	.blog-post .post-body { font-size: 16px; line-height: 1.85; }
 }
 
+/* WRITING: two columns (left Technological, right Philosophical) */
+.writing-cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 36px; align-items: start; margin-top: 1em; }
+.writing-col-head { text-align: center; margin-bottom: 22px; padding-bottom: 18px; border-bottom: 2px solid rgba(28,38,43,.12); }
+.writing-col-head i { display: block; height: 48px; line-height: 48px; font-size: 38px; color: #345; }
+.writing-col-head p { min-height: 2.9em; }
+.writing-col-head h2 { margin: 8px 0 6px; font-size: 22px; letter-spacing: -0.5px; text-transform: uppercase; color: #2a3b47; }
+.writing-col-head p { margin: 0 auto; max-width: 30em; font-size: 14px; color: #6b7c86; }
+.writing-col .blog-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.writing-col .blog-card-img { height: 110px; }
+.writing-col .blog-card-body { padding: 16px 18px 14px; }
+.writing-col .blog-card-title { font-size: 16px; margin: 6px 0; }
+.writing-col .blog-card-summary { -webkit-line-clamp: 3; font-size: 13.5px; }
+.writing-col .blog-card-more { margin-top: 8px; }
+.writing-col .blog-more-wrap { margin: 1.6em 0 1em; }
+@media (max-width: 900px) {
+	.writing-cols { grid-template-columns: 1fr; gap: 10px; }
+}
+@media (max-width: 480px) {
+	.writing-col .blog-list { grid-template-columns: 1fr; } /* phones: one per row */
+}
+.writing-empty { background: #fff; border-radius: 4px; padding: 30px 26px; text-align: center; color: #576872; }
+.writing-empty i { display: block; font-size: 44px; color: #345; margin-bottom: 10px; }
+.writing-empty p { margin: 0 0 18px; font-size: 14.5px; }
+
