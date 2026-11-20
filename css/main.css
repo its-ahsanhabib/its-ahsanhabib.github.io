@@ -2628,3 +2628,39 @@ html, body {
 .map-tiles-dark {
 	filter: invert(1) hue-rotate(180deg) grayscale(1) brightness(.45) contrast(1.1) sepia(.4) hue-rotate(140deg) saturate(1.3); /* dark, teal-tinted to match the site */
 }
+
+/* MOBILE NAV: section icons in the top bar on phones (replaces the hamburger drawer) */
+.mobile-nav { display: none; }
+@media screen and (max-width: 767px) {
+	.menu-toggle { display: none; }
+	.mobile-title { left: 16px; width: auto; }
+	.mobile-nav { display: block; position: absolute; top: 0; right: 4px; height: 50px; }
+	.mobile-nav ul { display: flex; margin: 0; padding: 0; list-style: none; }
+	.mobile-nav li { margin: 0; padding: 0; }
+	.mobile-nav li:before { display: none; }
+	.mobile-nav a {
+		position: relative; display: flex; align-items: center; justify-content: center;
+		width: 40px; height: 50px; font-size: 22px; color: rgba(225, 246, 255, 0.45); text-decoration: none;
+	}
+	.mobile-nav a:hover { color: rgba(225, 246, 255, 0.8); }
+	.mobile-nav .current_page_item a { color: #fff; }
+	.mobile-nav .current_page_item a:after {
+		content: ""; position: absolute; left: 50%; bottom: 6px; width: 16px; height: 2px; margin-left: -8px; border-radius: 2px; background: #60d7a9;
+	}
+	/* contact map is only a background on phones: hide its zoom buttons (they slid under the top bar) */
+	.leaflet-control-zoom { display: none; }
+}
+@media screen and (max-width: 359px) {
+	.mobile-title { display: none; } /* very small phones: icons only */
+	.mobile-nav { left: 0; right: 0; }
+	.mobile-nav ul { justify-content: space-around; }
+}
+
+/* PORTFOLIO ICON: chip + soldering iron (custom; the icon fonts have no PCB/soldering glyph).
+   Used as <i class="ic-pcb"></i>; drawn on :before so it picks up the same font-size rules as pe-7s icons. */
+.ic-pcb:before {
+	content: ""; display: inline-block; width: 1.2em; height: 1.2em; margin: -0.1em; vertical-align: -0.2em; background-color: currentColor; /* drawn thinner than font glyphs, so a bit larger */
+	-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke='%23000' stroke-width='1.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3.5' y='13.5' width='13' height='13' rx='1.4'/%3E%3Ccircle cx='6.6' cy='16.6' r='.7' fill='%23000' stroke='none'/%3E%3Cpath d='M7 13.5v-2.5M10 13.5v-2.5M13 13.5v-2.5M7 26.5V29M10 26.5V29M13 26.5V29M3.5 17H1M3.5 20H1M3.5 23H1M16.5 17H19M16.5 20H19M16.5 23H19'/%3E%3Cpath d='M30.6 3.6l-2.2-2.2-5.6 5.6 2.2 2.2z'/%3E%3Cpath d='M27.1 3.9l1 1M25.7 5.3l1 1'/%3E%3Cpath d='M23.9 8.1l-6.4 6.4'/%3E%3Cpath d='M17.5 14.5l-1.6 1 1-1.6'/%3E%3Cpath d='M19.5 9.5c-1-1 .4-1.9-.4-3M22 7c-.9-1 .3-1.8-.4-2.8' stroke-width='.9'/%3E%3C/svg%3E") center / contain no-repeat;
+	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke='%23000' stroke-width='1.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3.5' y='13.5' width='13' height='13' rx='1.4'/%3E%3Ccircle cx='6.6' cy='16.6' r='.7' fill='%23000' stroke='none'/%3E%3Cpath d='M7 13.5v-2.5M10 13.5v-2.5M13 13.5v-2.5M7 26.5V29M10 26.5V29M13 26.5V29M3.5 17H1M3.5 20H1M3.5 23H1M16.5 17H19M16.5 20H19M16.5 23H19'/%3E%3Cpath d='M30.6 3.6l-2.2-2.2-5.6 5.6 2.2 2.2z'/%3E%3Cpath d='M27.1 3.9l1 1M25.7 5.3l1 1'/%3E%3Cpath d='M23.9 8.1l-6.4 6.4'/%3E%3Cpath d='M17.5 14.5l-1.6 1 1-1.6'/%3E%3Cpath d='M19.5 9.5c-1-1 .4-1.9-.4-3M22 7c-.9-1 .3-1.8-.4-2.8' stroke-width='.9'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+

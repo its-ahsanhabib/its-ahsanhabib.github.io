@@ -6,6 +6,8 @@ whenever something structural changes.
 ## What it is
 - A static site on **GitHub Pages**, served at **https://itsahsan.me** (`CNAME`). There is no build
   step: push to `main` and it's live.
+- Navigation: left sidebar on tablet/desktop (`.nav-menu`); on phones (<768px) a top bar with section icons
+  (`.mobile-nav`). Add any new section to both.
 - A jQuery one-page template from around 2016. Sections in `index.html`: `#home`, `#about`, `#resume`,
   `#portfolio`, `#blog` (labelled "Writing"), `#contact`. Navigation uses hash URLs (`#/portfolio`)
   via `jquery.address`.

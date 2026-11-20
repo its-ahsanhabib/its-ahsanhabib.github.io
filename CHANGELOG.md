@@ -2,6 +2,17 @@
 
 Newest first. One entry per change set, with dates as YYYY-MM-DD.
 
+## 2026-11-20: Portfolio icon
+- Replaced the glasses icon (`pe-7s-glasses`) with a custom chip + soldering-iron icon
+  (`<i class="ic-pcb"></i>`, SVG mask at the end of `css/main.css`) in the sidebar, phone top bar,
+  home "All Projects" button and Portfolio page title.
+
+## 2026-11-20: Mobile top-bar navigation
+- Phones (<768px): the hamburger drawer (which opened at 80% width with a huge photo) is replaced
+  by the 6 section icons in the top bar (`.mobile-nav` in `index.html`, styles at the end of
+  `css/main.css`); the current section gets a green underline (`setCurrentMenuItem` in `js/main.js`).
+  Below 360px the name hides and only icons show. Leaflet zoom buttons hidden on phones.
+
 ## 2026-11-20: Contact map fix and WhatsApp
 - Contact map showed "API KEY REQUIRED" tiles: CARTO basemaps now need a key. Switched to
   OpenStreetMap tiles (free, no key; attribution shown) darkened with `.map-tiles-dark` CSS filter.

@@ -1100,7 +1100,7 @@ $(document).ready(function () {
 	function setCurrentMenuItem() {
 		var activePageId = $('.pt-page.page-current').attr('id');
 		// set default nav menu
-		$('.nav-menu a[href$=' + activePageId + ']').parent().addClass('current_page_item').siblings().removeClass('current_page_item');
+		$('.nav-menu a[href$=' + activePageId + '], .mobile-nav a[href$=' + activePageId + ']').parent().addClass('current_page_item').siblings().removeClass('current_page_item');
 	}
 	// ------------------------------
 
