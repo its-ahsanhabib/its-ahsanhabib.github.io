@@ -1207,49 +1207,6 @@
     ]
   },
   {
-    "id": "portfolio-item-07",
-    "title": "Emergency Calling System",
-    "summary": "Embedded emergency alert / calling system project.",
-    "year": null,
-    "featured": false,
-    "categories": [
-      "Electronics",
-      "Embedded_System",
-      "Automation"
-    ],
-    "cover": "portfolio/images/emergency button.jpg",
-    "blocks": [
-      {
-        "type": "image",
-        "src": "portfolio/images/Blind_pathfinder.JPG"
-      },
-      {
-        "type": "heading",
-        "text": "ABOUT THE PROJECT"
-      },
-      {
-        "type": "text",
-        "html": "<p>A pick and place machine is used in indrustry to replace human to do that precission work with out touch of the human hand. they are much pressise as .01mm</p><p>But the gole of this machine is to maintain a stack of paper and deleiver that to the client as defined as in server.</p>"
-      },
-      {
-        "type": "heading",
-        "text": "MADE FOR"
-      },
-      {
-        "type": "image",
-        "src": "portfolio/images/pfo_2/1.jpeg"
-      },
-      {
-        "type": "youtube",
-        "id": "Kyrw5u-79t8"
-      },
-      {
-        "type": "youtube",
-        "id": "m7zT-T6u2JU"
-      }
-    ]
-  },
-  {
     "id": "portfolio-item-08",
     "title": "Voice Controlled Home Automation",
     "summary": "Voice-controlled home automation exploring Google Assistant & smart home integration.",

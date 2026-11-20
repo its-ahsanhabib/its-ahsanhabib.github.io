@@ -875,7 +875,7 @@ body {
 	display: flex; flex-wrap: wrap; justify-content: center;
 	}
 	.worked-at-item {
-		flex: 0 0 20%; max-width: 20%; min-width: 140px; box-sizing: border-box; padding: 0 15px;
+		flex: 0 0 16.66%; max-width: 16.66%; min-width: 120px; box-sizing: border-box; padding: 0 12px;
 		}
 
 /* WORKED AT (reuses .fun-fact, but stays icon-over-text & centered at every width -
@@ -896,6 +896,9 @@ body {
 		}
 	.fun-fact.worked-at img.worked-at-logo {
 		float: none; display: block; max-width: 100%; max-height: 42px; width: auto; height: auto; margin: 0 auto 12px;
+		}
+	.fun-fact.worked-at img.worked-at-logo-square { /* square logos look tiny at the wide-logo height */
+		max-height: 64px; margin-top: -11px; margin-bottom: 1px;
 		}
 	.fun-fact.worked-at h4 {
 		float: none; margin: 0 auto; max-width: 140px; padding-top: 0; font-size: 12px; text-align: center;
@@ -1187,6 +1190,13 @@ body {
 			}
 		.social li a.github:hover {
             background-color: #222;
+			}
+		/* email (fontello has no mail glyph, so borrow pe-icon-7-stroke's pe-7s-mail) */
+		.social li a.email:before {
+ 			content: '\e639'; font-family: 'Pe-icon-7-stroke'; font-size: 20px; vertical-align: -3px;
+			}
+		.social li a.email:hover {
+            background-color: #60d7a9; color: #1c262b;
 			}
 		.social li a.wordpress:hover {
             background-color: #0083b3;

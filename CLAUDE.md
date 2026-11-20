@@ -22,7 +22,7 @@ whenever something structural changes.
 | `css/home.css` | Home page ("Spotlight" design): wide photo + left text on desktop, `home-portrait.jpg` face crop on portrait screens, featured tiles, stats. Has height-based rules so everything fits on short screens |
 | `PORTFOLIO.md` | Project entry format, for humans |
 | `portfolio/images/<project-id>/` | Images for each project (older projects use loose files in `portfolio/images/`) |
-| `portfolio-item-01..17.html` | Redirect stubs only, kept for old shared links. Don't add new ones |
+| `portfolio-item-01..17.html` | Redirect stubs only, kept for old shared links. Don't add new ones. `-07` (removed project) redirects to `#/portfolio` |
 | `tools/` | Scripts for importing LinkedIn posts as projects (below) |
 
 ## Projects (portfolio.json)
@@ -60,7 +60,7 @@ employer/NDA-sensitive products, and anything you guessed (captions, years, cate
 
 ## Conventions
 - Commit only when asked. The owner merges branches into `main` themselves. Don't push without asking.
-- Contact/social: LinkedIn `embedwithahsan`, GitHub `its-ahsanhabib`. The "Writing" section links to
+- Contact/social: LinkedIn `embedwithahsan`, GitHub `its-ahsanhabib`, email `habib.ahsan.dev@gmail.com` (sidebar + Contact). No Facebook/Twitter/Instagram. The "Writing" section links to
   LinkedIn recent activity.
 - Don't reintroduce PHP/server code; GitHub Pages is static only.
 
@@ -68,9 +68,6 @@ employer/NDA-sensitive products, and anything you guessed (captions, years, cate
 - The About counters and the home stats row (10+ yrs / 5 companies / 1000+ units / 2 awards) and the
   home typing text have not been checked against LinkedIn. The owner needs to supply the current values.
   The stats appear in two places: `#about` fun-facts and `.hv-stats` in `#home`.
-- 7 old raw videos in `portfolio/images/*.mp4` (~110 MB) are not compressed yet. Four are unused
-  (`timer.mp4`, `smart door lock.mp4`, `VID_2018*.mp4`).
-- `portfolio-item-07` ("Emergency Calling System") contains copy-pasted Pick-and-Place content.
-  Waiting on the owner to provide the real content or hide it.
+- 3 old raw videos (`weaving.mp4`, `weaving2.mp4`, `RGB led.mp4`, ~22 MB) are not compressed yet.
 - Unused older media in `portfolio/images/` (BMS, GRBL, baby tracker, testimonials, sketches) could
   become projects.

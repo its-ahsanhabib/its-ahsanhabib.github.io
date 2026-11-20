@@ -2,6 +2,23 @@
 
 Newest first. One entry per change set, with dates as YYYY-MM-DD.
 
+## 2026-11-20: Sidebar social links
+- Removed Facebook, Twitter and Instagram from the sidebar; added an Email icon (mailto, uses
+  the pe-7s-mail glyph). Sidebar now: LinkedIn, GitHub, Email. No phone/WhatsApp yet (no number).
+
+## 2026-11-20: Resume update
+- Added Maple IT Solutions (Embedded System Engineer, Sep 2026 - Present, Dhaka) with company
+  line and 3 bullets; logo (`images/clients/logos/maple-it-solutions.png`, white made transparent)
+  added first in the "Worked at" row, which now fits 6 logos (square-logo size rule in `css/main.css`).
+- MeldCX entry: title "Electronics Engineer", May 2024 - Sep 2026, Melbourne, Victoria.
+- Companies count 5 -> 6 (home stats + About).
+
+## 2026-11-20: Removed project and unused videos
+- Removed "Emergency Calling System" (`portfolio-item-07`, it had copy-pasted Pick-and-Place
+  content) and its cover image; `portfolio-item-07.html` now redirects to `#/portfolio`.
+- Deleted 4 unused videos (`timer.mp4`, `smart door lock.mp4`, `VID_20180306_022907.mp4`,
+  `VID_20180411_060039.mp4`), so `portfolio/images` went from 126 MB to 42 MB.
+
 ## 2026-11-20: Fix mobile pull-to-refresh on section swipe
 - Swiping down at the top of a section on mobile reloaded the page (browser pull-to-refresh)
   instead of going to the previous section. Added `overscroll-behavior-y` on `html, body` (none)
