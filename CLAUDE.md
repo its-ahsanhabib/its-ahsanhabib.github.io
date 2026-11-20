@@ -28,6 +28,7 @@ whenever something structural changes.
 | `portfolio/images/<project-id>/` | Images for each project (older projects use loose files in `portfolio/images/`) |
 | `portfolio-item-01..17.html` | Redirect stubs only, kept for old shared links. Don't add new ones. `-07` (removed project) redirects to `#/portfolio` |
 | `images/ico/` | Favicons: `favicon.svg` is the source (chip "A" logo); PNG/ICO sizes are rendered from it. Brand name: "Embed with Ahsan" |
+| `cv.html` | **Dynamic CV.** Built in the browser from `index.html` (#home name/headline, #about summary, #resume work/education/awards/skills/languages, #contact details). "Download CV" on the site opens `cv.html?download=1` (print → Save as PDF, real text). Don't hand-edit CV content here; if you change the resume markup structure (`.event` h3/h4/h5/em/li, `.skill-unit h4`, `.contact-card`), check `parseSite()` still finds it. Fits 2 A4 pages. No projects section on purpose (owner doesn't want concrete work details on the CV) |
 | `tools/` | `linkedin_fetch.py` + `add_projects.py` (LinkedIn posts → projects), `import_somewhereinblog.py` (Bengali blog → `blog.json`) |
 
 ## Projects (portfolio.json)

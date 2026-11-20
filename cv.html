@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ahsan_Habib_CV</title>
+<meta name="description" content="CV of Ahsan Habib, Embedded Systems Engineer, generated from itsahsan.me.">
+<link rel="icon" href="images/ico/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="images/ico/favicon.ico" sizes="any">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<!--
+  DYNAMIC CV
+  Built in the browser from the live site, so it is always up to date:
+    index.html  -> name, headline (#home), summary (#about), work history / education / awards
+                   and skills / languages (#resume), contact details (#contact)
+  Nothing to edit here when the resume changes: update index.html instead.
+  "Download PDF" uses the browser's print-to-PDF (real, selectable text, ATS friendly).
+  cv.html?download=1 opens the save dialog automatically (used by the site's Download CV button).
+-->
+<style>
+	:root { --ink: #1c262b; --text: #33424c; --muted: #6b7c86; --accent: #2f9e74; --line: #dfe5e8; }
+	* { box-sizing: border-box; }
+	html { background: #e9ecee; }
+	body { margin: 0; font: 10.5pt/1.5 "Roboto", Arial, sans-serif; color: var(--text); }
+	.toolbar { position: sticky; top: 0; z-index: 5; display: flex; gap: 10px; justify-content: center; align-items: center; padding: 12px; background: var(--ink); }
+	.toolbar a, .toolbar button { font: 700 12px/1 "Montserrat", sans-serif; letter-spacing: 1px; text-transform: uppercase; padding: 11px 18px; border-radius: 4px; border: 2px solid #60d7a9; cursor: pointer; text-decoration: none; }
+	.toolbar button { background: #60d7a9; color: var(--ink); }
+	.toolbar a { background: transparent; color: #fff; border-color: rgba(255,255,255,.6); }
+	.toolbar .hint { color: rgba(255,255,255,.55); font-size: 12px; }
+	.page { width: 210mm; min-height: 297mm; margin: 18px auto; padding: 14mm 14mm 12mm; background: #fff; box-shadow: 0 4px 24px rgba(0,0,0,.12); }
+	.loading { text-align: center; color: var(--muted); padding: 60px 0; }
+
+	header.cv-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; padding-bottom: 10px; border-bottom: 3px solid var(--ink); }
+	.cv-name { margin: 0; font: 700 26pt/1 "Montserrat", sans-serif; letter-spacing: -0.5px; color: var(--ink); text-transform: uppercase; }
+	.cv-title { margin: 6px 0 0; font: 600 11.5pt/1.2 "Montserrat", sans-serif; color: var(--accent); }
+	.cv-contact { list-style: none; margin: 0; padding: 0; text-align: right; font-size: 9pt; line-height: 1.6; color: var(--text); }
+	.cv-contact a { color: inherit; text-decoration: none; }
+	.cv-summary { margin: 10px 0 0; font-size: 10pt; }
+
+	.cv-body { display: grid; grid-template-columns: 1fr 62mm; gap: 9mm; margin-top: 8px; }
+	h2.sec { margin: 14px 0 6px; padding-bottom: 3px; font: 700 10pt/1 "Montserrat", sans-serif; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink); border-bottom: 1px solid var(--line); }
+	.job { margin: 0 0 9px; break-inside: avoid; }
+	.job-top { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+	.job-title { font-weight: 700; color: var(--ink); font-size: 10.5pt; }
+	.job-date { flex: none; font-size: 8.5pt; font-weight: 500; color: var(--muted); white-space: nowrap; }
+	.job-org { font-size: 9.5pt; color: var(--accent); font-weight: 500; }
+	.job-desc { margin: 1px 0 0; font-size: 9pt; font-style: italic; color: var(--muted); }
+	.job ul { margin: 3px 0 0; padding-left: 15px; }
+	.job li { margin: 0 0 1.5px; font-size: 9.3pt; }
+
+	.side .group { margin-bottom: 8px; break-inside: avoid; }
+	.side .group-name { font-weight: 700; font-size: 9pt; color: var(--ink); margin: 0 0 3px; }
+	.chips { display: flex; flex-wrap: wrap; gap: 4px; }
+	.chip { font-size: 8.5pt; padding: 2px 7px; border-radius: 3px; background: #eef4f1; color: #24584a; }
+	.side .item { margin: 0 0 7px; font-size: 9pt; break-inside: avoid; }
+	.side .item b { color: var(--ink); display: block; font-size: 9.3pt; }
+	.side .item span { color: var(--muted); }
+	.cv-foot { margin-top: 10px; padding-top: 6px; border-top: 1px solid var(--line); font-size: 8pt; color: var(--muted); text-align: center; }
+
+	@media screen and (max-width: 820px) {
+		.page { width: auto; min-height: 0; margin: 0; padding: 18px 16px; box-shadow: none; }
+		header.cv-head { flex-direction: column; align-items: flex-start; }
+		.cv-contact { text-align: left; }
+		.cv-body { grid-template-columns: 1fr; }
+		.toolbar .hint { display: none; }
+	}
+	@page { size: A4; margin: 12mm 13mm 11mm; }
+	@media print {
+		html, body { background: #fff; }
+		.toolbar { display: none; }
+		.page { margin: 0; padding: 0; box-shadow: none; width: auto; min-height: 0; }
+		a { color: inherit; }
+	}
+</style>
+</head>
+<body>
+	<div class="toolbar">
+		<button type="button" id="dl">Download PDF</button>
+		<a href="index.html#/resume">Back to site</a>
+		<span class="hint">In the dialog choose "Save as PDF"</span>
+	</div>
+	<main class="page" id="cv"><p class="loading">Building CV from the latest information…</p></main>
+
+<script>
+(function () {
+	'use strict';
+	var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+	var txt = function (el) { return el ? el.textContent.replace(/\s+/g, ' ').trim() : ''; };
+	var cap = function (s) {
+		return s.replace(/\b\w/g, function (c) { return c.toUpperCase(); })
+			.replace(/\b(Pcb|Iot|Rtos|Mcu|Ai)\b/g, function (w) { return w === 'Iot' ? 'IoT' : w.toUpperCase(); });
+	};
+
+	function parseSite(doc) {
+		var d = {};
+		d.name = txt(doc.querySelector('#home .hv-name')) || 'Ahsan Habib';
+		d.title = txt(doc.querySelector('#home .hv-eyebrow'));
+		var about = doc.querySelectorAll('#about p.center');
+		d.summary = txt(about[1] || about[0]);
+
+		// contact
+		var card = function (label) {
+			var out = '';
+			doc.querySelectorAll('#contact .contact-card').forEach(function (c) { if (txt(c.querySelector('h4')).toLowerCase() === label) out = txt(c.querySelector('p')); });
+			return out;
+		};
+		var mail = doc.querySelector('#contact a[href^="mailto:"]');
+		var href = function (cls) { var a = doc.querySelector('#contact .contact-social a.' + cls); return a ? a.getAttribute('href') : ''; };
+		d.contact = {
+			email: mail ? mail.getAttribute('href').replace('mailto:', '') : '',
+			location: card('location'),
+			whatsapp: href('whatsapp'),
+			linkedin: href('linkedin'),
+			github: href('github'),
+			website: 'itsahsan.me'
+		};
+
+		// work history / education / awards: #resume .col-sm-7 .event, split by the h2 headers
+		d.sections = {};
+		var current = null;
+		doc.querySelectorAll('#resume .col-sm-7 .event').forEach(function (ev) {
+			var h2 = ev.querySelector('h2');
+			if (h2) { current = txt(h2).toLowerCase(); d.sections[current] = []; return; }
+			if (!current) return;
+			var em = ev.querySelector('p em');
+			var plain = ev.querySelector(':scope > p:not(:has(em))');
+			d.sections[current].push({
+				date: txt(ev.querySelector('h3')),
+				title: txt(ev.querySelector('h4')),
+				org: txt(ev.querySelector('h5')),
+				desc: txt(em),
+				note: em ? '' : txt(plain),
+				bullets: Array.prototype.map.call(ev.querySelectorAll('li'), txt)
+			});
+		});
+
+		// skills / languages: #resume .col-sm-5, grouped by section titles
+		d.skills = [];
+		var group = null;
+		Array.prototype.forEach.call(doc.querySelectorAll('#resume .col-sm-5 .section-title, #resume .col-sm-5 .skill-unit'), function (el) {
+			if (el.classList.contains('section-title')) { group = { name: cap(txt(el).replace(/\s*skills?$/i, '')), items: [] }; d.skills.push(group); }
+			else if (group) group.items.push(txt(el.querySelector('h4')));
+		});
+		return d;
+	}
+
+	function linkText(url) { return url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''); }
+
+	function render(d) {
+		var c = d.contact, s = d.sections;
+		var contact = [
+			c.location && esc(c.location),
+			c.email && '<a href="mailto:' + esc(c.email) + '">' + esc(c.email) + '</a>',
+			c.whatsapp && '<a href="' + esc(c.whatsapp) + '">' + esc((c.whatsapp.match(/\d{8,}/) || [''])[0].replace(/^(\d{3})(\d{4})(\d+)$/, '+$1 $2-$3')) + '</a>',
+			'<a href="https://' + esc(c.website) + '">' + esc(c.website) + '</a>',
+			c.linkedin && '<a href="' + esc(c.linkedin) + '">' + esc(linkText(c.linkedin)) + '</a>',
+			c.github && '<a href="' + esc(c.github) + '">' + esc(linkText(c.github)) + '</a>'
+		].filter(Boolean).map(function (x) { return '<li>' + x + '</li>'; }).join('');
+
+		var jobs = (s['work history'] || []).map(function (j) {
+			return '<div class="job"><div class="job-top"><span class="job-title">' + esc(j.title) + '</span><span class="job-date">' + esc(j.date) + '</span></div>' +
+				'<div class="job-org">' + esc(j.org) + '</div>' +
+				(j.desc ? '<p class="job-desc">' + esc(j.desc) + '</p>' : '') +
+				(j.bullets.length ? '<ul>' + j.bullets.map(function (b) { return '<li>' + esc(b) + '</li>'; }).join('') + '</ul>' : '') + '</div>';
+		}).join('');
+
+		var langs = d.skills.filter(function (g) { return /language/i.test(g.name); });
+		var tech = d.skills.filter(function (g) { return !/language/i.test(g.name); });
+		var skills = tech.map(function (g) {
+			return '<div class="group"><p class="group-name">' + esc(g.name) + '</p><div class="chips">' +
+				g.items.map(function (i) { return '<span class="chip">' + esc(i) + '</span>'; }).join('') + '</div></div>';
+		}).join('');
+		var items = function (list) {
+			return (list || []).map(function (e) {
+				return '<div class="item"><b>' + esc(e.title) + '</b><span>' + esc([e.org, e.date].filter(Boolean).join(' · ')) + '</span>' +
+					(e.note ? '<br>' + esc(e.note) : '') + '</div>';
+			}).join('');
+		};
+		var languages = langs.length ? '<div class="item">' + langs[0].items.map(esc).join(' · ') + '</div>' : '';
+
+		document.getElementById('cv').innerHTML =
+			'<header class="cv-head"><div><h1 class="cv-name">' + esc(d.name) + '</h1>' +
+			(d.title ? '<p class="cv-title">' + esc(d.title) + '</p>' : '') + '</div>' +
+			'<ul class="cv-contact">' + contact + '</ul></header>' +
+			(d.summary ? '<p class="cv-summary">' + esc(d.summary) + '</p>' : '') +
+			'<div class="cv-body"><section class="main"><h2 class="sec">Experience</h2>' + jobs + '</section>' +
+			'<aside class="side"><h2 class="sec">Skills</h2>' + skills +
+			((s.education || []).length ? '<h2 class="sec">Education</h2>' + items(s.education) : '') +
+			((s.awards || []).length ? '<h2 class="sec">Awards</h2>' + items(s.awards) : '') +
+			(languages ? '<h2 class="sec">Languages</h2>' + languages : '') + '</aside></div>' +
+			'<p class="cv-foot">Generated from itsahsan.me on ' + new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) +
+			'. Latest version: https://itsahsan.me</p>';
+		document.title = d.name.replace(/\s+/g, '_') + '_CV';
+	}
+
+	var site = fetch('index.html', { cache: 'no-cache' }).then(function (r) { return r.text(); })
+		.then(function (h) { return parseSite(new DOMParser().parseFromString(h, 'text/html')); });
+	site.then(function (d) {
+		render(d);
+		document.fonts && document.fonts.ready.then(function () {
+			if (/[?&]download=1\b/.test(location.search)) setTimeout(function () { window.print(); }, 300);
+		});
+	}).catch(function () {
+		document.getElementById('cv').innerHTML = '<p class="loading">Could not build the CV right now. Please try again, or see itsahsan.me/#/resume.</p>';
+	});
+
+	document.getElementById('dl').addEventListener('click', function () { window.print(); });
+})();
+</script>
+</body>
+</html>

@@ -2,6 +2,13 @@
 
 Newest first. One entry per change set, with dates as YYYY-MM-DD.
 
+## 2026-11-21: Dynamic CV generator
+- New `cv.html`: builds the CV live from the site (name/headline, summary, work history, education,
+  awards, skills, languages, contact from `index.html`), two-column A4 layout, 2 pages. No projects
+  section (owner's choice: no concrete work details on the CV). "Download PDF" uses print-to-PDF (selectable text, ATS friendly),
+  default file name `Ahsan_Habib_CV`.
+- Resume "Download CV" button now opens `cv.html?download=1` (save dialog opens automatically).
+
 ## 2026-11-21: New favicon and "Embed with Ahsan" title
 - Favicon: green chip with a white "A" on #1c262b (`images/ico/favicon.svg`, plus favicon.ico
   16/32/48, favicon-32.png, apple-touch-icon.png 180 (square), icon-192/512.png). Old favicon.jpg removed.
