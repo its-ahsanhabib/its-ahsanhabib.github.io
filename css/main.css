@@ -2543,11 +2543,26 @@ a.more-link:hover,
     overflow: hidden !important;
 }
 
-/* Maintain background coverage */
+/* Home background: responsive.
+   Landscape/desktop: wide photo, anchored so the face (right side) stays in view.
+   Portrait (phones, upright tablets): square face crop on top, fading into the photo's
+   navy (#020e24) where the name and buttons sit. */
 #home.has-bg-img {
+    background-color: #020e24 !important;
     background-size: cover !important;
-    background-position: center center !important;
+    background-position: 72% center !important;
     background-repeat: no-repeat !important;
+}
+@media (max-aspect-ratio: 1/1) {
+    #home.has-bg-img {
+        background-image: url(../images/site/home-portrait.jpg) !important;
+        background-size: 100% auto !important;
+        background-position: center top !important;
+    }
+}
+@media (max-aspect-ratio: 1/1) and (max-width: 767px) {
+    /* below the mobile top bar */
+    #home.has-bg-img { background-position: center 50px !important; }
 }
 
 /* Enable internal scroll for content sections */

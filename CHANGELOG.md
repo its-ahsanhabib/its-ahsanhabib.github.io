@@ -2,6 +2,12 @@
 
 Newest first. One entry per change set, with dates as YYYY-MM-DD.
 
+## 2026-11-20: Responsive home background
+- Portrait screens (phones, upright tablets) use `images/site/home-portrait.jpg`, a square face
+  crop that fades into navy (#020e24) behind the text. Landscape/desktop keep the wide photo,
+  anchored at 72% so the face stays visible (`css/main.css`, "Home background").
+- Restored `images/site/home.jpg` at 2400px from the original 3366px (it had been compressed to 1600px).
+
 ## 2026-11-19: 16 projects imported from LinkedIn posts
 - Added via `tools/` (LinkedIn embed → spec → `add_projects.py`):
   - **Featured:** Lenovo M710q 2nd M.2 slot, 1kW MPPT solar charge controller, Home Assistant
