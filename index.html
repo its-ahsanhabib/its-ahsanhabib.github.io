@@ -25,6 +25,7 @@
 
     <!-- Change http to https -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&display=swap' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic' rel='stylesheet'
         type='text/css'>
 
@@ -1036,11 +1037,17 @@
                         <!-- page-title -->
 
 
-                        <!-- WRITING: posts live on LinkedIn -->
+                        <!-- BLOG: posts rendered from blog.json by renderBlogList() in js/main.js -->
+                        <p class="blog-intro">My Bengali blog: stories, poems and thoughts from 2011&ndash;2016,
+                            originally on somewhereinblog.net.</p>
+                        <div class="blog-list" id="blog-list"></div>
+                        <p class="blog-more-wrap"><a href="#" class="button" id="blog-more" style="display:none">Load more posts</a></p>
+
+                        <!-- WRITING: newer posts live on LinkedIn -->
                         <div class="writing-card">
                             <i class="pe-7s-news-paper"></i>
                             <p>
-                                I share project write-ups, engineering notes and updates on firmware,
+                                These days I share project write-ups, engineering notes and updates on firmware,
                                 hardware and IoT product development on LinkedIn.
                             </p>
                             <p class="launch">

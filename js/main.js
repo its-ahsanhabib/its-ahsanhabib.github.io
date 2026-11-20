@@ -1,6 +1,7 @@
 /* global variables */
 var classicLayout = false;
 var portfolioKeyword;
+var detailSection = null; // 'portfolio' or 'blog' while a detail overlay URL is active
 var mapCanvas;
 
 
@@ -189,9 +190,99 @@ function renderHomeFeatured() {
 	});
 }
 
+// ==============================
+// BLOG / WRITING (data-driven from blog.json)
+// ------------------------------
+// Post list in #blog-list; a post opens in the same overlay as projects at #/blog/<id>.
+// Each entry: id, title, date (YYYY-MM-DD), lang, summary, cover?, html OR text, source?
+// See BLOG.md for the format.
+// ==============================
+var postsRequest = null;
+var BLOG_PAGE_SIZE = 12;
+var blogShown = 0;
+var MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+function getPosts() {
+	if (!postsRequest) {
+		postsRequest = $.getJSON('blog.json').then(function (data) {
+			return (data || []).slice().sort(function (a, b) { return (b.date || '').localeCompare(a.date || ''); });
+		});
+	}
+	return postsRequest;
+}
+
+function formatPostDate(iso) {
+	var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || '');
+	return m ? (+m[3]) + ' ' + MONTH_NAMES[+m[2] - 1] + ' ' + m[1] : '';
+}
+
+// "text" (plain, blank line = new paragraph, newline = line break) or trusted "html"
+function postBodyHtml(p) {
+	if (p.html) return p.html;
+	return $.map(String(p.text || '').split(/\n\s*\n/), function (para) {
+		return para.trim() ? '<p>' + escapeHtml(para.trim()).replace(/\n/g, '<br>') + '</p>' : null;
+	}).join('');
+}
+
+function renderBlogList(reset) {
+	var $list = $('#blog-list');
+	if (!$list.length) return;
+	getPosts().done(function (posts) {
+		if (reset) { $list.empty(); blogShown = 0; }
+		var next = posts.slice(blogShown, blogShown + BLOG_PAGE_SIZE);
+		$list.append($.map(next, function (p) {
+			var lang = p.lang ? ' lang="' + escapeHtml(p.lang) + '"' : '';
+			return '<a class="blog-card' + (p.cover ? ' has-cover' : '') + '" href="#/blog/' + escapeHtml(p.id) + '">' +
+				(p.cover ? '<span class="blog-card-img" style="background-image:url(\'' + escapeHtml(p.cover) + '\')"></span>' : '') +
+				'<span class="blog-card-body">' +
+				'<span class="blog-card-date">' + escapeHtml(formatPostDate(p.date)) + '</span>' +
+				'<span class="blog-card-title"' + lang + '>' + escapeHtml(p.title) + '</span>' +
+				'<span class="blog-card-summary"' + lang + '>' + escapeHtml(p.summary || '') + '</span>' +
+				'<span class="blog-card-more">Read &rarr;</span>' +
+				'</span></a>';
+		}).join(''));
+		blogShown += next.length;
+		$('#blog-more').toggle(blogShown < posts.length);
+		$('#blog-count').text(posts.length);
+	});
+}
+
+function getPostHtml(url) {
+	var id = projectIdFromUrl(url);
+	return getPosts().then(function (posts) {
+		for (var i = 0; i < posts.length; i++) {
+			if (String(posts[i].id) === id) {
+				var p = posts[i], n = posts.length;
+				var prev = posts[(i - 1 + n) % n], next = posts[(i + 1) % n];
+				var lang = p.lang ? ' lang="' + escapeHtml(p.lang) + '"' : '';
+				var nav = function (extra) {
+					return '<div class="portfolio-nav' + extra + '">' +
+						'<a class="prev" href="#/blog/' + escapeHtml(prev.id) + '" title="' + escapeHtml(prev.title) + '"></a>' +
+						'<a class="back" href="#/blog" title="All posts"></a>' +
+						'<a class="next" href="#/blog/' + escapeHtml(next.id) + '" title="' + escapeHtml(next.title) + '"></a>' +
+						'</div>';
+				};
+				var source = p.source ? '<p class="post-source">Originally published on <a href="' + escapeHtml(p.source) +
+					'" target="_blank" rel="noopener noreferrer">' + escapeHtml(p.source.replace(/^https?:\/\/(www\.)?/, '').split('/')[0]) + '</a></p>' : '';
+				return '<div class="portfolio-single page-layout blog-post"><div class="layout-medium"><article class="hentry">' +
+					'<header class="entry-header">' + nav('') +
+					'<h1 class="entry-title"' + lang + '>' + escapeHtml(p.title) + '</h1>' +
+					'<p class="post-date">' + escapeHtml(formatPostDate(p.date)) + '</p>' +
+					'</header>' +
+					'<div class="entry-content post-body"' + lang + '>' + postBodyHtml(p) + '</div>' +
+					source + nav(' bottom') +
+					'</article></div></div>';
+			}
+		}
+		return $.Deferred().reject().promise();
+	});
+}
+
 $(document).ready(function () {
 	loadPortfolioItems();
 	renderHomeFeatured();
+	renderBlogList(true);
+	$(document).on('click', '#blog-more', function (e) { e.preventDefault(); renderBlogList(false); });
 });
 
 
@@ -205,6 +296,7 @@ $(document).ready(function () {
 	// same sign convention as a wheel event's deltaY.
 	function evaluateScroll(delta, downThreshold, upThreshold) {
 		if (isTransitioning) return;
+		if ($('html').hasClass('p-overlay-on')) return; // reading a project/post: let it scroll normally
 
 		var currentHash = window.location.hash || '#/home';
 
@@ -404,8 +496,11 @@ $(document).ready(function () {
 				if (detailUrl != -1) {
 					showProjectDetails(detailUrl);
 				} else {
-					if ($.address.path().indexOf("/" + portfolioKeyword) != -1) {
-						hideProjectDetails(true, false);
+					var cur = $.address.path();
+					if (cur.indexOf("/" + portfolioKeyword) === 0) {
+						hideProjectDetails(true, false, portfolioKeyword);
+					} else if (cur.indexOf("/blog") === 0) {
+						hideProjectDetails(true, false, 'blog');
 					}
 				}
 			});
@@ -936,7 +1031,7 @@ $(document).ready(function () {
 
 		// fill data: render from portfolio.json; fall back to fetching an HTML page
 		var fill = function (done) {
-			getProjectHtml(url)
+			(detailSection === 'blog' ? getPostHtml(url) : getProjectHtml(url))
 				.done(function (html) { p.empty().html(html); done(); })
 				.fail(function () { p.empty().load(url + ' .portfolio-single', done); });
 		};
@@ -975,7 +1070,7 @@ $(document).ready(function () {
 		});
 	}
 
-	function hideProjectDetails(forever, safeClose) {
+	function hideProjectDetails(forever, safeClose, section) {
 
 		$("body").scrollTop(0);
 
@@ -986,8 +1081,8 @@ $(document).ready(function () {
 			$('html').removeClass('p-overlay-on');
 
 			if (!safeClose) {
-				// remove detail url
-				$.address.path(portfolioKeyword);
+				// remove detail url (back to the section the detail belonged to)
+				$.address.path(section || portfolioKeyword);
 			}
 		}
 
@@ -1001,18 +1096,21 @@ $(document).ready(function () {
 		}
 	}
 
+	// Detail views open in the overlay: #/portfolio/<id> (projects) and #/blog/<id> (posts).
+	// Sets detailSection to the matching section id.
 	function giveDetailUrl() {
 
 		var address = $.address.value();
-		var detailUrl;
+		var keys = [portfolioKeyword, 'blog'];
 
-		if (address.indexOf("/" + portfolioKeyword + "/") != -1 && address.length > portfolioKeyword.length + 2) {
-			var total = address.length;
-			detailUrl = address.slice(portfolioKeyword.length + 2, total);
-		} else {
-			detailUrl = -1;
+		for (var i = 0; i < keys.length; i++) {
+			var k = keys[i];
+			if (k && address.indexOf("/" + k + "/") === 0 && address.length > k.length + 2) {
+				detailSection = k;
+				return address.slice(k.length + 2);
+			}
 		}
-		return detailUrl;
+		return -1;
 	}
 	// ------------------------------
 
@@ -1038,7 +1136,7 @@ $(document).ready(function () {
 
 		var path = $.address.path();
 		path = path.slice(1, path.length);
-		path = giveDetailUrl() != -1 ? portfolioKeyword : path;
+		path = giveDetailUrl() != -1 ? detailSection : path;
 
 
 		if (path == "") {  // if hash tag doesnt exists - go to first page

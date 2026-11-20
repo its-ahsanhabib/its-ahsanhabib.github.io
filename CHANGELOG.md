@@ -2,6 +2,16 @@
 
 Newest first. One entry per change set, with dates as YYYY-MM-DD.
 
+## 2026-11-21: Blog on the Writing page
+- Imported Bengali posts (2011–2016) from somewhereinblog.net into `blog.json` with
+  `tools/import_somewhereinblog.py`; 2 picture-only posts skipped. Owner then removed 16 posts
+  (reposted news, personal/gift/picture posts) and all images: 40 posts, text only.
+- Writing page lists posts as cards (newest first, "Load more"); a post opens in the overlay at
+  `#/blog/<id>` with prev/next. LinkedIn card kept below. Noto Sans Bengali font for `lang="bn"`.
+- Overlay routing generalised for `#/portfolio/<id>` and `#/blog/<id>`; section swipe/scroll
+  navigation is ignored while an overlay is open (scrolling in a project could jump sections).
+- New `BLOG.md` (post format).
+
 ## 2026-11-20: Portfolio icon
 - Replaced the glasses icon (`pe-7s-glasses`) with a custom chip + soldering-iron icon
   (`<i class="ic-pcb"></i>`, SVG mask at the end of `css/main.css`) in the sidebar, phone top bar,

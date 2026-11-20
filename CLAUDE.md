@@ -23,9 +23,11 @@ whenever something structural changes.
 | `css/main.css` | Template styles; site-specific additions are at the end (`PROJECTS`, `WRITING`) |
 | `css/home.css` | Home page ("Spotlight" design): wide photo + left text on desktop, `home-portrait.jpg` face crop on portrait screens, featured tiles, stats. Has height-based rules so everything fits on short screens |
 | `PORTFOLIO.md` | Project entry format, for humans |
+| `blog.json` | **All blog posts** (Writing page). Cards + post overlay rendered by `renderBlogList` / `getPostHtml` in `js/main.js`. Format in `BLOG.md` |
+| `images/blog/` | (create when needed) covers/images for new hand-written posts |
 | `portfolio/images/<project-id>/` | Images for each project (older projects use loose files in `portfolio/images/`) |
 | `portfolio-item-01..17.html` | Redirect stubs only, kept for old shared links. Don't add new ones. `-07` (removed project) redirects to `#/portfolio` |
-| `tools/` | Scripts for importing LinkedIn posts as projects (below) |
+| `tools/` | `linkedin_fetch.py` + `add_projects.py` (LinkedIn posts → projects), `import_somewhereinblog.py` (Bengali blog → `blog.json`) |
 
 ## Projects (portfolio.json)
 Entry fields: `id`, `title`, `summary`, `year`, `featured`, `categories`, `cover`, optional
@@ -59,6 +61,14 @@ The owner shares `lnkd.in/p/...` links and sometimes says which posts to merge i
 
 Before publishing, flag these to the owner: personal content (family), names of collaborators,
 employer/NDA-sensitive products, and anything you guessed (captions, years, categories).
+
+## Blog (blog.json)
+- 40 Bengali posts (2011–2016) imported from somewhereinblog.net/blog/ahkshopno; newest first, 12 per "Load more".
+  No images in posts (owner's choice). 16 posts were removed by the owner; their ids are in `EXCLUDE_IDS`
+  in `tools/import_somewhereinblog.py`, so they never come back on re-import.
+- Overlay routing is shared with projects: `giveDetailUrl()` recognises `#/portfolio/<id>` and `#/blog/<id>`
+  and sets `detailSection`; `showProjectDetails` picks `getPostHtml` or `getProjectHtml` from it.
+- Images on cms.somewhereinblog.net are dead (404). 2 picture-only posts were skipped on import.
 
 ## Conventions
 - Commit only when asked. The owner merges branches into `main` themselves. Don't push without asking.
