@@ -173,8 +173,25 @@ function getProjectHtml(url) {
 }
 
 
+// Home: small tiles for the first featured projects (same order as the portfolio grid)
+var HOME_FEATURED_COUNT = 3;
+
+function renderHomeFeatured() {
+	var $tiles = $('#home-featured');
+	if (!$tiles.length) return;
+	getProjects().done(function (projects) {
+		var featured = $.grep(projects, function (p) { return p.featured; }).slice(0, HOME_FEATURED_COUNT);
+		$tiles.html($.map(featured, function (p) {
+			return '<a class="hv-tile" href="#/portfolio/' + escapeHtml(p.id) + '" title="' + escapeHtml(p.title) + '">' +
+				'<span class="hv-tile-img" style="background-image:url(\'' + escapeHtml(p.cover) + '\')"></span>' +
+				'<span class="hv-tile-title">' + escapeHtml(p.title) + '</span></a>';
+		}).join(''));
+	});
+}
+
 $(document).ready(function () {
 	loadPortfolioItems();
+	renderHomeFeatured();
 });
 
 

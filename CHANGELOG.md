@@ -2,6 +2,14 @@
 
 Newest first. One entry per change set, with dates as YYYY-MM-DD.
 
+## 2026-11-20: New home page ("Spotlight")
+- Replaced the home section (keeps the site's grey-teal photo overlay): left-aligned
+  "Embedded Systems Engineer" eyebrow, one-line name, typing role, pitch, "All Projects" /
+  "Get In Touch" buttons, compact featured-project tiles (first 3 featured from `portfolio.json`,
+  kept narrow so they don't cover the face) and a stats row.
+- Styles in new `css/home.css`; `renderHomeFeatured()` in `js/main.js`. Responsive: portrait uses
+  the face crop; tiles fit the width on phones; less important items hide on short screens.
+
 ## 2026-11-20: Responsive home background
 - Portrait screens (phones, upright tablets) use `images/site/home-portrait.jpg`, a square face
   crop that fades into navy (#020e24) behind the text. Landscape/desktop keep the wide photo,

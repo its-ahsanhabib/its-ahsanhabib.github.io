@@ -39,6 +39,7 @@
     <link rel="stylesheet" type="text/css" href="css/align.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/768.css">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
 
 
     <!-- PREVENT UNLOAD PERMISSIONS VIOLATION WARNING -->
@@ -171,35 +172,33 @@
 
         <!-- .site-main -->
         <div id="main" class="site-main"> <!-- PAGE : HOME -->
-            <section id="home" class="pt-page page-layout light-text home-section has-bg-img"
-                style="background-image:url(images/site/home.jpg)">
-                <!-- .content -->
-                <div class="content">
-                    <!-- .layout-medium -->
-                    <div class="layout-medium">
-
-                        <h4>Hi, I am</h4>
-                        <h2>AHSAN HABIB</h2>
-                        <h4>I am <strong id="typist-element"
-                                data-typist="a Firmware Developer., a PCB Designer., an IoT Product Developer., a Product Developer., a Problem Solver.">a
-                                Firmware Developer.</strong></h4>
-
-                        <p class="home-cta">
-                            <a href="#/portfolio" class="button"><i class="pe-7s-glasses"></i>View My Work</a>
-                            <a href="#/contact" class="button"><i class="pe-7s-call"></i>Get In Touch</a>
+            <section id="home" class="pt-page page-layout home-v">
+                <div class="hv">
+                    <div class="hv-text">
+                        <p class="hv-eyebrow">Embedded Systems Engineer</p>
+                        <h2 class="hv-name">Ahsan Habib</h2>
+                        <p class="hv-role">I am <strong id="typist-element"
+                                data-typist="a Firmware Developer., a PCB Designer., an IoT Product Developer., a Product Developer., a Problem Solver.">a Firmware Developer.</strong></p>
+                        <p class="hv-pitch">Ten years building firmware and hardware for industrial and consumer
+                            electronics, from schematic to shipped product.</p>
+                        <p class="hv-cta">
+                            <a href="#/portfolio" class="hv-btn hv-btn-primary"><i class="pe-7s-glasses"></i>All Projects</a>
+                            <a href="#/contact" class="hv-btn"><i class="pe-7s-call"></i>Get In Touch</a>
                         </p>
-
+                        <div class="hv-featured">
+                            <p class="hv-label">Featured work</p>
+                            <!-- filled from portfolio.json (featured projects) by renderHomeFeatured() in js/main.js -->
+                            <div class="hv-tiles" id="home-featured"></div>
+                        </div>
+                        <ul class="hv-stats">
+                            <li><b>10+</b>years</li>
+                            <li><b>5</b>companies</li>
+                            <li><b>1000+</b>units shipped</li>
+                            <li><b>2</b>innovation awards</li>
+                        </ul>
                     </div>
-                    <!-- .layout-medium -->
                 </div>
-                <!-- .content -->
-
-                <!-- SCROLL DOWN INDICATOR -->
-                <a href="#/about" class="scroll-down-indicator" title="Scroll Down">
-                    <i class="pe-7s-angle-down-circle"></i>
-                    <span>Scroll Down</span>
-                </a>
-                <!-- SCROLL DOWN INDICATOR -->
+                <a href="#/about" class="scroll-down-indicator" title="Scroll Down"><i class="pe-7s-angle-down-circle"></i><span>Scroll Down</span></a>
             </section>
             <!-- PAGE : HOME -->
 

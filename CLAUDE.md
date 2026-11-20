@@ -19,6 +19,7 @@ whenever something structural changes.
 | `portfolio.json` | **All projects.** The grid and the detail views are rendered from it |
 | `js/main.js` | Top of file: project rendering (`getProjects`, `sortProjects`, `renderProject`, `renderBlock`). Below: template code (page transitions, `showProjectDetails` overlay, masonry) |
 | `css/main.css` | Template styles; site-specific additions are at the end (`PROJECTS`, `WRITING`) |
+| `css/home.css` | Home page ("Spotlight" design): wide photo + left text on desktop, `home-portrait.jpg` face crop on portrait screens, featured tiles, stats. Has height-based rules so everything fits on short screens |
 | `PORTFOLIO.md` | Project entry format, for humans |
 | `portfolio/images/<project-id>/` | Images for each project (older projects use loose files in `portfolio/images/`) |
 | `portfolio-item-01..17.html` | Redirect stubs only, kept for old shared links. Don't add new ones |
@@ -32,6 +33,7 @@ Block types: `image` {src, caption?}, `video` {src, poster?, caption?}, `youtube
 
 - URL of a project: `itsahsan.me/#/portfolio/<id>`. Old ids `portfolio-item-NN` must keep working.
 - Display order: `featured` first → `year` desc → order in the file.
+- The home page shows the first 3 featured projects as tiles (`HOME_FEATURED_COUNT` in `js/main.js`), so `featured` + order also controls the home page.
 - `categories` must match `data-filter` values in `index.html` `#filters`: `Electronics`, `iOT`,
   `AI`, `Automation`, `Embedded_System`, `Power`, `3D`, `Robotics_Mechatronics`,
   `Sketch_Photography`, `Thinking_Traveling`. Empty filters hide automatically.
@@ -63,8 +65,9 @@ employer/NDA-sensitive products, and anything you guessed (captions, years, cate
 - Don't reintroduce PHP/server code; GitHub Pages is static only.
 
 ## Open items
-- The About counters (10 yrs / 5 companies / 1000+ units / 2 awards) and the home typing text have
-  not been checked against LinkedIn. The owner needs to supply the current values.
+- The About counters and the home stats row (10+ yrs / 5 companies / 1000+ units / 2 awards) and the
+  home typing text have not been checked against LinkedIn. The owner needs to supply the current values.
+  The stats appear in two places: `#about` fun-facts and `.hv-stats` in `#home`.
 - 7 old raw videos in `portfolio/images/*.mp4` (~110 MB) are not compressed yet. Four are unused
   (`timer.mp4`, `smart door lock.mp4`, `VID_2018*.mp4`).
 - `portfolio-item-07` ("Emergency Calling System") contains copy-pasted Pick-and-Place content.
