@@ -1,5 +1,415 @@
 [
   {
+    "id": "controller-board-hack",
+    "title": "Hardware Hacking: Reprogramming a Controller Board",
+    "summary": "Old hardware hack: wiring a programming adapter into an off-the-shelf controller board to run my own firmware on it.",
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "Embedded_System"
+    ],
+    "cover": "portfolio/images/controller-board-hack/cover.jpg",
+    "meta": {
+      "Type": "Personal / hardware hacking"
+    },
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/controller-board-hack/cover.jpg",
+        "caption": "Controller board wired to a USB programming adapter"
+      },
+      {
+        "type": "heading",
+        "text": "About the project"
+      },
+      {
+        "type": "text",
+        "html": "<p>An old hardware-hacking project: an off-the-shelf controller board with a 4-digit display, status LEDs, push buttons and a QFP microcontroller. I traced its programming header, wired in a USB adapter and got my own firmware running on the existing hardware.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/controller-board-hack/desk.jpg",
+        "caption": "Back at the desk with the firmware open"
+      }
+    ]
+  },
+  {
+    "id": "computer-history",
+    "title": "Holding a Piece of Computer History",
+    "summary": "A vintage portable computer with a built-in CRT: a reminder of how far computing hardware has come.",
+    "year": 2026,
+    "featured": false,
+    "categories": [
+      "Thinking_Traveling"
+    ],
+    "cover": "portfolio/images/computer-history/cover.jpg",
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/computer-history/cover.jpg"
+      },
+      {
+        "type": "text",
+        "html": "<p>A vintage portable computer with a tiny built-in CRT screen and a full keyboard, from the days when \"portable\" meant something you carried with both hands.</p><p>Holding hardware like this is a good reminder of how far computing has come, and of the engineers who squeezed so much into so little.</p>"
+      }
+    ]
+  },
+  {
+    "id": "nuttx-remote-base-station",
+    "title": "NuttX-based Remote Base Station",
+    "summary": "Remote base station prototype running Apache NuttX on an STM32 Nucleo, with GNSS and 8 relay outputs.",
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "Embedded_System",
+      "iOT",
+      "Automation"
+    ],
+    "cover": "portfolio/images/nuttx-remote-base-station/cover.jpg",
+    "meta": {
+      "RTOS": "Apache NuttX",
+      "MCU board": "STM32 Nucleo-144"
+    },
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/nuttx-remote-base-station/cover.jpg",
+        "caption": "Prototype: STM32 Nucleo, GNSS module, terminal inputs and 8-channel relay board"
+      },
+      {
+        "type": "heading",
+        "text": "About the project"
+      },
+      {
+        "type": "text",
+        "html": "<p>A remote base station prototype built on the Apache NuttX RTOS, running on an STM32 Nucleo-144 board. It combines a GNSS module for position and time, screw-terminal inputs, a buzzer and an 8-channel relay board for switching field equipment.</p>"
+      }
+    ]
+  },
+  {
+    "id": "smart-router-walton",
+    "title": "Smart Wi-Fi Router (300 & 1200 Mbps)",
+    "summary": "Hardware and firmware for Walton's 300 and 1200 Mbps routers with NAS, MQTT server and IoT hub.",
+    "year": 2022,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "iOT",
+      "Embedded_System"
+    ],
+    "cover": "portfolio/images/smart-router-walton/cover.jpg",
+    "meta": {
+      "Company": "Walton Digi-Tech Industries",
+      "Role": "Hardware & firmware"
+    },
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/smart-router-walton/cover.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "About the project"
+      },
+      {
+        "type": "text",
+        "html": "<p>Hardware and firmware development for 300 Mbps and 1200 Mbps home routers, with built-in NAS, an MQTT server and an IoT hub, so the router also acts as the centre of a smart home.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/smart-router-walton/boards.jpg",
+        "caption": "Router boards during development"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/smart-router-walton/nas-test.jpg",
+        "caption": "Testing the NAS feature with a SATA SSD and battery backup"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/smart-router-walton/launch.jpg"
+      }
+    ]
+  },
+  {
+    "id": "smart-safe",
+    "title": "Smart Biometric Safe",
+    "summary": "Wi-Fi connected biometric safe with capacitive touch keypad, 700-day battery life and redundant USB-C power.",
+    "year": 2022,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "iOT",
+      "Embedded_System"
+    ],
+    "cover": "portfolio/images/smart-safe/cover.jpg",
+    "meta": {
+      "Company": "Walton Digi-Tech Industries",
+      "Role": "Hardware & firmware"
+    },
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/smart-safe/cover.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "About the project"
+      },
+      {
+        "type": "text",
+        "html": "<p>A smart, Wi-Fi connected biometric safe: capacitive touch keypad, about 700 days of battery life, and redundant USB-C power input so it can still be opened if the battery runs flat.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/smart-safe/keypad.jpg",
+        "caption": "Capacitive touch keypad boards"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/smart-safe/inside.jpg",
+        "caption": "Control electronics and lock mechanism"
+      }
+    ]
+  },
+  {
+    "id": "smart-rice-cooker",
+    "title": "Smart IoT Multi-Cooker",
+    "summary": "Upgraded conventional rice cookers to smart IoT multi-cookers at 20% lower cost with an STM8 value-line MCU.",
+    "year": 2022,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "iOT",
+      "Automation",
+      "Embedded_System"
+    ],
+    "cover": "portfolio/images/smart-rice-cooker/cover.jpg",
+    "meta": {
+      "Company": "Walton Digi-Tech Industries",
+      "MCU": "STM8 value line"
+    },
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/smart-rice-cooker/cover.jpg",
+        "caption": "Control and display board"
+      },
+      {
+        "type": "heading",
+        "text": "About the project"
+      },
+      {
+        "type": "text",
+        "html": "<p>Upgraded conventional rice cookers into smart IoT multi-cookers connected to the Walton IoT service, at 20% lower cost, using an STM8 value-line MCU.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/smart-rice-cooker/pot.jpg",
+        "caption": "Testing with the cooker"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/smart-rice-cooker/proto.jpg",
+        "caption": "Early prototype board"
+      }
+    ]
+  },
+  {
+    "id": "access-control-device",
+    "title": "Embedded Linux Access Control Device",
+    "summary": "Hardware and firmware of a biometric access control terminal running Embedded Linux.",
+    "year": 2022,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "Embedded_System"
+    ],
+    "cover": "portfolio/images/access-control-device/cover.jpg",
+    "meta": {
+      "Company": "Walton Digi-Tech Industries",
+      "Platform": "Embedded Linux"
+    },
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/access-control-device/cover.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "About the project"
+      },
+      {
+        "type": "text",
+        "html": "<p>Hardware and firmware development of an access control device built on Embedded Linux, with display, keypad and fingerprint reader.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/access-control-device/pcb.jpg",
+        "caption": "Main board under inspection"
+      }
+    ]
+  },
+  {
+    "id": "smart-air-conditioner",
+    "title": "Smart Air Conditioner with Voice Control",
+    "summary": "Air conditioner hardware and firmware with a voice recognition module, integrated with the Walton IoT network.",
+    "year": 2022,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "iOT",
+      "Automation",
+      "Embedded_System"
+    ],
+    "cover": "portfolio/images/smart-air-conditioner/cover.jpg",
+    "meta": {
+      "Company": "Walton Digi-Tech Industries",
+      "Role": "Hardware & firmware"
+    },
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/smart-air-conditioner/cover.jpg",
+        "caption": "Test setup"
+      },
+      {
+        "type": "heading",
+        "text": "About the project"
+      },
+      {
+        "type": "text",
+        "html": "<p>Air conditioner hardware and firmware design with a voice recognition module for hands-free control, integrated with the Walton IoT network.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/smart-air-conditioner/voice-module.jpg",
+        "caption": "Voice recognition module (ESP32-S2)"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/smart-air-conditioner/lab.jpg",
+        "caption": "Testing in the lab"
+      }
+    ]
+  },
+  {
+    "id": "speaker-development",
+    "title": "Bluetooth Speaker Development",
+    "summary": "Control board, display and remote for a home Bluetooth speaker.",
+    "year": 2022,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "Embedded_System"
+    ],
+    "cover": "portfolio/images/speaker-development/cover.jpg",
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/speaker-development/cover.jpg"
+      },
+      {
+        "type": "heading",
+        "text": "About the project"
+      },
+      {
+        "type": "text",
+        "html": "<p>Electronics development for a home speaker with Bluetooth audio, front display and IR remote.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/speaker-development/board.jpg",
+        "caption": "Amplifier and control boards"
+      }
+    ]
+  },
+  {
+    "id": "heat-pump-iot-backbone",
+    "title": "Heat Pump IoT Backbone",
+    "summary": "IoT backbone on AWS MQTT connecting heat pump water heaters, air conditioners, smart plugs and hybrid batteries.",
+    "year": 2023,
+    "featured": false,
+    "categories": [
+      "iOT",
+      "Embedded_System",
+      "Automation",
+      "Power"
+    ],
+    "cover": "portfolio/images/heat-pump-iot-backbone/cover.jpg",
+    "meta": {
+      "Company": "Smart Lifestyle Australia",
+      "Stack": "AWS MQTT, RISC-V Wi-Fi/BLE MCUs, ESP32"
+    },
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/heat-pump-iot-backbone/cover.jpg",
+        "caption": "Heat pump controller on the bench"
+      },
+      {
+        "type": "heading",
+        "text": "About the project"
+      },
+      {
+        "type": "text",
+        "html": "<p>Led development of an IoT backbone on AWS MQTT to connect existing product lines using RISC-V based Wi-Fi and BLE MCUs.</p><p>Integrated the heat pump water heater, air conditioner, smart plug and hybrid battery system into the IoT network, with a Linux-based application SDK for BL60x Wi-Fi &amp; BLE MCUs and an RTOS-based Wi-Fi and NimBLE firmware platform for ESP32 IoT nodes.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/heat-pump-iot-backbone/app.jpg",
+        "caption": "App control"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/heat-pump-iot-backbone/plug.jpg"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/heat-pump-iot-backbone/plug-test.jpg"
+      }
+    ]
+  },
+  {
+    "id": "smart-iot-module",
+    "title": "Smart IoT Module",
+    "summary": "Compact IoT I/O module: controller board with relays and terminal blocks in a small enclosure.",
+    "year": 2023,
+    "featured": false,
+    "categories": [
+      "Electronics",
+      "iOT",
+      "Embedded_System",
+      "Automation"
+    ],
+    "cover": "portfolio/images/smart-iot-module/cover.jpg",
+    "blocks": [
+      {
+        "type": "image",
+        "src": "portfolio/images/smart-iot-module/cover.jpg",
+        "caption": "Finished modules"
+      },
+      {
+        "type": "heading",
+        "text": "About the project"
+      },
+      {
+        "type": "text",
+        "html": "<p>A compact smart IoT module: a controller board with relays and terminal blocks, built into a small enclosure for installation alongside existing equipment.</p>"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/smart-iot-module/board.jpg",
+        "caption": "Main board"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/smart-iot-module/proto.jpg",
+        "caption": "Prototype"
+      }
+    ]
+  },
+  {
     "id": "homelab-m710q-m2-slot",
     "title": "Adding a 2nd M.2 Slot to a Lenovo M710q Tiny",
     "summary": "Hand-soldered the unpopulated second M.2 NVMe/SATA slot on my homelab server's motherboard.",
@@ -419,6 +829,23 @@
         "type": "image",
         "src": "portfolio/images/universal-vts-telematics/production.jpg",
         "caption": "Units in testing"
+      },
+      {
+        "type": "heading",
+        "text": "Tracker hardware"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/universal-vts-telematics/tracker-pcb.jpg",
+        "caption": "Tracker PCB with GNSS antenna and SIM"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/universal-vts-telematics/tracker-1.jpg"
+      },
+      {
+        "type": "image",
+        "src": "portfolio/images/universal-vts-telematics/tracker-2.jpg"
       }
     ]
   },

@@ -2,6 +2,17 @@
 
 Newest first. One entry per change set, with dates as YYYY-MM-DD.
 
+## 2026-11-21: Work projects from "Working With Geoff.pdf"
+- Added 8 projects with photos from the owner's PDF (text from the resume bullets):
+  Walton: smart Wi-Fi router (incl. NAS test photo), smart biometric safe, smart IoT multi-cooker, Embedded Linux
+  access control device, voice-controlled air conditioner (incl. ESP32-S2 voice module photo), Bluetooth speaker; Smart Lifestyle
+  Australia: heat pump IoT backbone; plus a smart IoT module and a NuttX-based remote base station.
+- "Holding a Piece of Computer History" (Thinking & Traveling), photo with blurred background.
+- "Hardware Hacking: Reprogramming a Controller Board" (old personal project, 2 photos).
+- 3 tracker hardware photos added to "Universal VTS Telematics Device".
+- Skipped: "Cellular based Industrial Router" (owner's request), the route-map screenshot (privacy)
+  and the untitled "Other Projects" board.
+
 ## 2026-11-21: Dynamic CV generator
 - New `cv.html`: builds the CV live from the site (name/headline, summary, work history, education,
   awards, skills, languages, contact from `index.html`), two-column A4 layout, 2 pages. No projects
