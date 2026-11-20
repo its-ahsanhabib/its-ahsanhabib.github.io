@@ -2,6 +2,12 @@
 
 Newest first. One entry per change set, with dates as YYYY-MM-DD.
 
+## 2026-11-20: Contact map fix and WhatsApp
+- Contact map showed "API KEY REQUIRED" tiles: CARTO basemaps now need a key. Switched to
+  OpenStreetMap tiles (free, no key; attribution shown) darkened with `.map-tiles-dark` CSS filter.
+- Added WhatsApp (`wa.me/8801738889858`) to the sidebar and the Contact "Let's Socialize" row
+  (SVG-mask icon, green on hover).
+
 ## 2026-11-20: Sidebar social links
 - Removed Facebook, Twitter and Instagram from the sidebar; added an Email icon (mailto, uses
   the pe-7s-mail glyph). Sidebar now: LinkedIn, GitHub, Email. No phone/WhatsApp yet (no number).

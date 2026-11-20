@@ -60,7 +60,9 @@ employer/NDA-sensitive products, and anything you guessed (captions, years, cate
 
 ## Conventions
 - Commit only when asked. The owner merges branches into `main` themselves. Don't push without asking.
-- Contact/social: LinkedIn `embedwithahsan`, GitHub `its-ahsanhabib`, email `habib.ahsan.dev@gmail.com` (sidebar + Contact). No Facebook/Twitter/Instagram. The "Writing" section links to
+- Contact/social: LinkedIn `embedwithahsan`, GitHub `its-ahsanhabib`, email `habib.ahsan.dev@gmail.com`,
+  WhatsApp `+8801738889858` (sidebar + Contact). No Facebook/Twitter/Instagram.
+- Contact map: Leaflet + OpenStreetMap tiles (no API key). Don't switch back to CARTO/Google tiles without a key. The "Writing" section links to
   LinkedIn recent activity.
 - Don't reintroduce PHP/server code; GitHub Pages is static only.
 

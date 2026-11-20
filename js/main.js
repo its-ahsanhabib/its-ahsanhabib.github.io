@@ -495,11 +495,13 @@ $(document).ready(function () {
 
 			var map = L.map('map-canvas').setView([lat, lng], zoom);
 
-			L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-				attribution: '&copy; OpenStreetMap contributors',
+			// OpenStreetMap tiles: free, no API key (CARTO basemaps now require one).
+			// Darkened to match the site with the .map-tiles-dark filter in css/main.css.
+			L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
 				opacity: 0.7, // Set opacity between 0.0 and 1.0
-				subdomains: 'abcd',
-				maxZoom: 20,
+				maxZoom: 19,
+				className: 'map-tiles-dark'
 			}).addTo(map);
 
 			L.marker([lat, lng]).addTo(map);
