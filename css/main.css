@@ -2550,6 +2550,13 @@ a.more-link:hover,
     overflow-y: auto !important;
     max-height: 100vh !important;
     -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain; /* don't hand edge swipes to the browser */
+}
+
+/* Mobile: disable the browser's pull-to-refresh. Swiping down at the top of a section must
+   go to the previous section (handled in js/main.js "Smart Section Navigation"), not reload. */
+html, body {
+    overscroll-behavior-y: none;
 }
 
 /* Ensure current active section receives wheel and touch events */

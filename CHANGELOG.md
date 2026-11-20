@@ -2,6 +2,11 @@
 
 Newest first. One entry per change set, with dates as YYYY-MM-DD.
 
+## 2026-11-20: Fix mobile pull-to-refresh on section swipe
+- Swiping down at the top of a section on mobile reloaded the page (browser pull-to-refresh)
+  instead of going to the previous section. Added `overscroll-behavior-y` on `html, body` (none)
+  and `.pt-page` (contain) in `css/main.css`.
+
 ## 2026-11-20: New home page ("Spotlight")
 - Replaced the home section (keeps the site's grey-teal photo overlay): left-aligned
   "Embedded Systems Engineer" eyebrow, one-line name, typing role, pitch, "All Projects" /
